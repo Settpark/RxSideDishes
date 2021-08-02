@@ -17,4 +17,18 @@ struct Banchan: Decodable {
     let nPrice: String?
     let sPrice: String
     let badge: [String]?
+    
+    static var empty = Banchan.init()
+    
+    init() {
+        detailHash = ""
+        image = ""
+        alt = ""
+        deliveryType = []
+        title = ""
+        description = ""
+        nPrice = ""
+        sPrice = ""
+        badge = []
+    }
 }

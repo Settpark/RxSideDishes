@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var banchans: BanChans = BanChans.init()
+    var banchans: Banchans = Banchans.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,7 @@ import Alamofire
 let mainURL: String = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
 
 class APIService {
-    static func fetchDataWithSession(API: String, onComplete: @escaping (Result<BanChans, Error>) -> Void) {
+    static func fetchDataWithSession(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
         guard let url = URL(string: mainURL + API) else {
             return
         }
@@ -24,23 +24,19 @@ class APIService {
             else {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let result = try! decoder.decode(BanChans.self, from: data!)
+                let result = try! decoder.decode(Banchans.self, from: data!)
                 onComplete(.success(result))
             }
         }.resume()
     }
     
-    static func fetchDataWithAF(API: String, onComplete: @escaping (Result<BanChans, Error>) -> Void) {
+    static func fetchDataWithAF(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
         guard let url = URL(string: mainURL + API) else {
             return
         }
         
-        AF.request(url)
-    }
-    static func request(_ request: Request) -> Observable<Data> {
-        guard let request = request.urlRequest() else {
-            return Observable.error(NetworkSessionError.invalidURL)
+        AF.request(url, method: .get) { data in
+            
         }
-        return session.rx.data(request: request)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BanChans: Decodable {
+class Banchans: Decodable {
     var body: [Banchan]
     
     init() {

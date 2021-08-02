@@ -7,7 +7,10 @@ target 'RxSwift_Sidedishes' do
 
 pod 'RxSwift'
 pod 'Alamofire'
-
+pod 'RxCocoa'
+pod 'Action'
+pod 'NSObject+Rx'
+pod 'RxDataSources'
+pod 'RxCoreData'
   # Pods for RxSwift_Sidedishes
-
 end

@@ -14,7 +14,9 @@
 		823C57B026AE7EC300A2B80E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823C57AE26AE7EC300A2B80E /* Main.storyboard */; };
 		823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B126AE7EC500A2B80E /* Assets.xcassets */; };
 		823C57B526AE7EC500A2B80E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B326AE7EC500A2B80E /* LaunchScreen.storyboard */; };
-		829E56EB26B2738D0099C3A0 /* BanChans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E56EA26B2738D0099C3A0 /* BanChans.swift */; };
+		829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E56EA26B2738D0099C3A0 /* Banchans.swift */; };
+		829FFA5A26B7C0B9007925DF /* BanchanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5926B7C0B9007925DF /* BanchanStorage.swift */; };
+		829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */; };
 		82ACD9EC26B244FD00CEE616 /* BanchanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9EB26B244FD00CEE616 /* BanchanViewModel.swift */; };
 		82ACD9F226B252F300CEE616 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F126B252F300CEE616 /* APIService.swift */; };
 		82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* Banchan.swift */; };
@@ -30,7 +32,9 @@
 		823C57B126AE7EC500A2B80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823C57B426AE7EC500A2B80E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823C57B626AE7EC500A2B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		829E56EA26B2738D0099C3A0 /* BanChans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChans.swift; sourceTree = "<group>"; };
+		829E56EA26B2738D0099C3A0 /* Banchans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchans.swift; sourceTree = "<group>"; };
+		829FFA5926B7C0B9007925DF /* BanchanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorage.swift; sourceTree = "<group>"; };
+		829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorageType.swift; sourceTree = "<group>"; };
 		82ACD9EB26B244FD00CEE616 /* BanchanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanViewModel.swift; sourceTree = "<group>"; };
 		82ACD9F126B252F300CEE616 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		82ACD9F326B2545F00CEE616 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */ = {
 			isa = PBXGroup;
 			children = (
+				829FFA5626B7B338007925DF /* Scene */,
 				82ACD9F026B252DF00CEE616 /* Repository */,
 				82ACD9EF26B252B300CEE616 /* ViewModel */,
 				82ACD9EA26B2425200CEE616 /* Model */,
@@ -89,11 +94,35 @@
 			path = RxSwift_Sidedishes;
 			sourceTree = "<group>";
 		};
-		82ACD9E726B23E2400CEE616 /* Asset */ = {
+		829FFA5626B7B338007925DF /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		829FFA5726B7B367007925DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				823C57B326AE7EC500A2B80E /* LaunchScreen.storyboard */,
 				823C57AE26AE7EC300A2B80E /* Main.storyboard */,
+				823C57AC26AE7EC300A2B80E /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		829FFA5826B7C094007925DF /* BanchanStorage */ = {
+			isa = PBXGroup;
+			children = (
+				829FFA5926B7C0B9007925DF /* BanchanStorage.swift */,
+				829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */,
+			);
+			path = BanchanStorage;
+			sourceTree = "<group>";
+		};
+		82ACD9E726B23E2400CEE616 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
 				823C57B126AE7EC500A2B80E /* Assets.xcassets */,
 			);
 			path = Asset;
@@ -112,7 +141,7 @@
 		82ACD9E926B23FA200CEE616 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				823C57AC26AE7EC300A2B80E /* ViewController.swift */,
+				829FFA5726B7B367007925DF /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				82ACD9F326B2545F00CEE616 /* Banchan.swift */,
-				829E56EA26B2738D0099C3A0 /* BanChans.swift */,
+				829E56EA26B2738D0099C3A0 /* Banchans.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +166,7 @@
 		82ACD9F026B252DF00CEE616 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				829FFA5826B7C094007925DF /* BanchanStorage */,
 				82ACD9F126B252F300CEE616 /* APIService.swift */,
 			);
 			path = Repository;
@@ -265,13 +295,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */,
 				823C57AD26AE7EC300A2B80E /* ViewController.swift in Sources */,
-				829E56EB26B2738D0099C3A0 /* BanChans.swift in Sources */,
+				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
 				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
 				823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */,
 				82ACD9EC26B244FD00CEE616 /* BanchanViewModel.swift in Sources */,
+				829FFA5A26B7C0B9007925DF /* BanchanStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
