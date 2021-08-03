@@ -13,6 +13,8 @@
 		823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AC26AE7EC300A2B80E /* MainViewController.swift */; };
 		823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B126AE7EC500A2B80E /* Assets.xcassets */; };
 		823C57B526AE7EC500A2B80E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B326AE7EC500A2B80E /* LaunchScreen.storyboard */; };
+		829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */; };
+		829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05726B907D300B7AED6 /* SceneCoordinator.swift */; };
 		829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E56EA26B2738D0099C3A0 /* Banchans.swift */; };
 		829FFA5A26B7C0B9007925DF /* BanchanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5926B7C0B9007925DF /* BanchanStorage.swift */; };
 		829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */; };
@@ -34,6 +36,8 @@
 		823C57B126AE7EC500A2B80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823C57B426AE7EC500A2B80E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		823C57B626AE7EC500A2B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
+		829DC05726B907D300B7AED6 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		829E56EA26B2738D0099C3A0 /* Banchans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchans.swift; sourceTree = "<group>"; };
 		829FFA5926B7C0B9007925DF /* BanchanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorage.swift; sourceTree = "<group>"; };
 		829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorageType.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			children = (
 				829FFA6126B7D4ED007925DF /* TransitionModel.swift */,
 				829FFA6326B7D6E5007925DF /* Scene.swift */,
+				829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */,
+				829DC05726B907D300B7AED6 /* SceneCoordinator.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -304,10 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */,
+				829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */,
 				829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */,
 				823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */,
 				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
 				829FFA6426B7D6E5007925DF /* Scene.swift in Sources */,
+				829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */,
 				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
