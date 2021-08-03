@@ -7,8 +7,10 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-
-
-class BanchanListViewModel {
+class BanchanListViewModel: CommonViewModel {
+    var banchanList: Observable<[Banchan]> {
+        return storage.banchanList()
+    }
 }
