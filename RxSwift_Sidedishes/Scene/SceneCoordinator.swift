@@ -13,11 +13,11 @@ class SceneCoordinator: SceneCoordinatorType {
     private let bag = DisposeBag()
     
     private var window: UIWindow
-    private var currentVC: UIViewController
+    private var currentVC: UIViewController?
     
     required init(window: UIWindow) {
         self.window = window
-        currentVC = window.rootViewController!
+        currentVC = window.rootViewController
     }
     
     @discardableResult
@@ -31,7 +31,7 @@ class SceneCoordinator: SceneCoordinatorType {
             window.rootViewController = target
             subject.onCompleted()
         case .push:
-            guard let nav = currentVC.navigationController else {
+            guard let nav = currentVC?.navigationController else {
                 subject.onError(TransitionError.navigationControllerMissing)
                 break
             }
@@ -39,12 +39,10 @@ class SceneCoordinator: SceneCoordinatorType {
             currentVC = target
             subject.onCompleted()
         case .modal:
-            currentVC.present(target, animated: animated) {
+            currentVC?.present(target, animated: animated) {
                 subject.onCompleted()
             }
             currentVC = target
-        default:
-            break
         }
         
         return subject.ignoreElements().asCompletable() // 이 연산자를 호출하면 subject가 Completable로 변환돼서 반환됩니다.
@@ -53,13 +51,13 @@ class SceneCoordinator: SceneCoordinatorType {
     @discardableResult
     func close(animated: Bool) -> Completable {
         return Completable.create { [unowned self] completable in
-            if let presentingVC = self.currentVC.presentedViewController {
-                self.currentVC.dismiss(animated: animated) {
+            if let presentingVC = self.currentVC?.presentedViewController {
+                self.currentVC?.dismiss(animated: animated) {
                     self.currentVC = presentingVC
                     completable(.completed)
                 }
             }
-            else if let nav = self.currentVC.navigationController {
+            else if let nav = self.currentVC?.navigationController {
                 guard nav.popViewController(animated: animated) != nil else {
                     completable(.error(TransitionError.cannotPop))
                     return Disposables.create()

@@ -25,7 +25,7 @@ struct Banchan: Decodable {
         image = ""
         alt = ""
         deliveryType = []
-        title = ""
+        title = "빈 더미 더미"
         description = ""
         nPrice = ""
         sPrice = ""
