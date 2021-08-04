@@ -110,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				829FFA6126B7D4ED007925DF /* TransitionModel.swift */,
+				829FFA5826B7C094007925DF /* BanchanStorage */,
 				829FFA6326B7D6E5007925DF /* Scene.swift */,
 				829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */,
 				829DC05726B907D300B7AED6 /* SceneCoordinator.swift */,
@@ -183,7 +184,6 @@
 		82ACD9F026B252DF00CEE616 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				829FFA5826B7C094007925DF /* BanchanStorage */,
 				82ACD9F126B252F300CEE616 /* APIService.swift */,
 				829DC05B26BA692400B7AED6 /* APIServiceType.swift */,
 			);

@@ -9,3 +9,8 @@
 2. class Diagram
 
 ![ClassDiagram](ReadmeImage/Banchan_Class_Diagram.png)
+![Scene](ReadmeImage/Scene.png)
+![SceneCoordinator](ReadmeImage/SceneCoordinator.png)
+![TransitionStyleAndError](ReadmeImage/TransitionStyle_Error.png)
+![banchanListViewController](ReadmeImage/banchanListViewController.png)
+![APIService](ReadmeImage/APIService.png)
