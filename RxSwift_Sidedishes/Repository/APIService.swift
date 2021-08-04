@@ -7,12 +7,13 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 let mainURL: String = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
 
-class APIService {
-    static func fetchDataWithSession(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        guard let url = URL(string: mainURL + API) else {
+class APIService: APIServiceType {
+    func fetchDataWithSession(api: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
+        guard let url = URL(string: mainURL + api) else {
             return
         }
         let request = try! URLRequest.init(url: url, method: .get)
@@ -30,13 +31,28 @@ class APIService {
         }.resume()
     }
     
-    static func fetchDataWithAF(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
+    func fetchDataWithAF(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
         guard let url = URL(string: mainURL + API) else {
             return
         }
         
         AF.request(url, method: .get) { data in
             
+        }
+    }
+    
+    func fetchDataWithRx(api: String) -> Observable<[Banchan]> {
+        return Observable.create { [weak self] emmiter in
+            self?.fetchDataWithSession(api: api) { result in
+                switch result {
+                case .success(let data):
+                    emmiter.onNext(data.body)
+                    emmiter.onCompleted()
+                case .failure(let error):
+                    emmiter.onError(error)
+                }
+            }
+            return Disposables.create()
         }
     }
 }

@@ -13,14 +13,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        APIService.fetchDataWithSession(API: "/main") { result in
-            switch result {
-            case .success(let data):
-                self.banchans = data
-            case .failure(let err):
-                print(err)
-            }
-        }
         view.backgroundColor = .white
         let label = addLabel()
         view.addSubview(label)
