@@ -8,10 +8,9 @@
 import Foundation
 import RxSwift
 
-protocol BanchanStorageType {
-    
+protocol BanchanStorageType {    
     @discardableResult
-    func banchanList() -> Observable<[Banchan]>
+    func banchanList() -> Observable<[BanchanSection]>
     
     @discardableResult
     func orderBanchan() -> Observable<Banchan>

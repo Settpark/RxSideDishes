@@ -10,7 +10,9 @@ import RxSwift
 import RxCocoa
 
 class BanchanListViewModel: CommonViewModel {
-    var banchanList: Observable<[Banchan]> {
+    
+    var banchanList: Observable<[BanchanSection]> {
         return storage.banchanList()
     }
+    
 }

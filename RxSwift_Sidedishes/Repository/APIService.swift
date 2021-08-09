@@ -9,6 +9,12 @@ import Foundation
 import Alamofire
 import RxSwift
 
+enum ApiServiceUseCase: String, CaseIterable {
+    case main = "/main"
+    case soup = "/soup"
+    case side = "/side"
+}
+
 class APIService: APIServiceType {
     private let mainURL: String = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
     func fetchDataWithSession(api: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {

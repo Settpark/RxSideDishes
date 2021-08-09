@@ -16,6 +16,9 @@
 		829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05726B907D300B7AED6 /* SceneCoordinator.swift */; };
 		829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05926B9121800B7AED6 /* CommonViewModel.swift */; };
 		829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05B26BA692400B7AED6 /* APIServiceType.swift */; };
+		829DC05E26BB83F900B7AED6 /* CustomMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05D26BB83F900B7AED6 /* CustomMainCell.swift */; };
+		829DC06026BB8E6B00B7AED6 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05F26BB8E6B00B7AED6 /* Extension+UILabel.swift */; };
+		829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC06226BB9B4400B7AED6 /* BanchanSection.swift */; };
 		829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E56EA26B2738D0099C3A0 /* Banchans.swift */; };
 		829FFA5A26B7C0B9007925DF /* BanchanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5926B7C0B9007925DF /* BanchanStorage.swift */; };
 		829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */; };
@@ -40,6 +43,9 @@
 		829DC05726B907D300B7AED6 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		829DC05926B9121800B7AED6 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		829DC05B26BA692400B7AED6 /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
+		829DC05D26BB83F900B7AED6 /* CustomMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainCell.swift; sourceTree = "<group>"; };
+		829DC05F26BB8E6B00B7AED6 /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
+		829DC06226BB9B4400B7AED6 /* BanchanSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanSection.swift; sourceTree = "<group>"; };
 		829E56EA26B2738D0099C3A0 /* Banchans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchans.swift; sourceTree = "<group>"; };
 		829FFA5926B7C0B9007925DF /* BanchanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorage.swift; sourceTree = "<group>"; };
 		829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorageType.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 		823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */ = {
 			isa = PBXGroup;
 			children = (
+				829DC06126BB8E7700B7AED6 /* Extension */,
 				829FFA5626B7B338007925DF /* Scene */,
 				82ACD9F026B252DF00CEE616 /* Repository */,
 				82ACD9EF26B252B300CEE616 /* ViewModel */,
@@ -104,6 +111,14 @@
 				823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */,
 			);
 			path = RxSwift_Sidedishes;
+			sourceTree = "<group>";
+		};
+		829DC06126BB8E7700B7AED6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				829DC05F26BB8E6B00B7AED6 /* Extension+UILabel.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		829FFA5626B7B338007925DF /* Scene */ = {
@@ -159,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				829FFA5726B7B367007925DF /* ViewController */,
+				829DC05D26BB83F900B7AED6 /* CustomMainCell.swift */,
+				829DC06226BB9B4400B7AED6 /* BanchanSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,8 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */,
+				829DC05E26BB83F900B7AED6 /* CustomMainCell.swift in Sources */,
 				829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */,
 				829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */,
+				829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */,
 				823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */,
 				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
 				829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */,
@@ -323,6 +342,7 @@
 				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
+				829DC06026BB8E6B00B7AED6 /* Extension+UILabel.swift in Sources */,
 				829FFA6026B7D26B007925DF /* ViewModelBindableType.swift in Sources */,
 				823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */,
 				829FFA5E26B7CC96007925DF /* MainBanchanListViewController.swift in Sources */,

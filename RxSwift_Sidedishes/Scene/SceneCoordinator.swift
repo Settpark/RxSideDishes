@@ -45,7 +45,7 @@ class SceneCoordinator: SceneCoordinatorType {
             currentVC = target
         }
         
-        return subject.ignoreElements().asCompletable() // 이 연산자를 호출하면 subject가 Completable로 변환돼서 반환됩니다.
+        return subject.ignoreElements().asCompletable()
     }
     
     @discardableResult
