@@ -14,7 +14,7 @@ class BanchanStorage: BanchanStorageType {
     
     private var banchans: [BanchanSection] = []
     
-    private lazy var stores = PublishRelay<[BanchanSection]>()
+    private lazy var stores = PublishSubject<[BanchanSection]>()
     private var apiService: APIServiceType
     
     init(apiService: APIServiceType) {
@@ -33,15 +33,14 @@ class BanchanStorage: BanchanStorageType {
     }
     
     func fetchAllListMainPage() {
-        let apiList = [ApiServiceUseCase.main, ApiServiceUseCase.soup, ApiServiceUseCase.side]
-        for i in 0..<apiList.count {
-            let _ = apiService.fetchDataWithRx(api: apiList[i].rawValue)
+        for i in 0..<ApiServiceUseCase.allCases.count {
+            let _ = apiService.fetchDataWithRx(api: ApiServiceUseCase.allCases[i].rawValue)
                 .subscribe({ [weak self] emmiter in
                     switch emmiter {
                     case .next(let data):
                         let temp = BanchanSection.init(sectionitem: BanchanSection.getSctionType(i), items: data)
                         self?.banchans.append(temp)
-                        self?.stores.accept(self!.banchans)
+                        self?.stores.onNext(self!.banchans)
                     case .error(let error):
                         print(error)
                     case .completed:

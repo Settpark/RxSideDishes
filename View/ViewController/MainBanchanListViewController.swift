@@ -36,7 +36,7 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType {
     func initTableView() {
         let tableViewSize = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.listTableView.frame = tableViewSize
-        self.listTableView.register(CustomMainCell.self, forCellReuseIdentifier: "myCell")
+        self.listTableView.register(MainViewBanchanCell.self, forCellReuseIdentifier: MainViewBanchanCell.cellidentifier)
         self.view.addSubview(self.listTableView)
         self.listTableView.rx
             .setDelegate(self)
@@ -50,10 +50,11 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType {
 
 extension MainBanchanListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? CustomMainCell else {
-            return
-        }
-        print("selectedCell's(\(indexPath.row)) title: \(cell.title.text)")
+        self.viewModel.sceneCoordinator.transition(to: .Detail, using: .push, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 
@@ -62,39 +63,27 @@ extension MainBanchanListViewController {
     private func initDatasource() {
         self.listDataSource = RxTableViewSectionedReloadDataSource<BanchanSection>(configureCell: {
             (datasource, tableView, indexPath, element) -> UITableViewCell in
-            let cell: CustomMainCell = self.getTableViewCell(tableView, indexPath: indexPath, item: element)
+            guard let cell: MainViewBanchanCell = tableView.dequeueReusableCell(withIdentifier: MainViewBanchanCell.cellidentifier) as? MainViewBanchanCell else {
+                return UITableViewCell()
+            }
             cell.setContents(value: element)
             return cell
         })
         
         self.listDataSource.titleForHeaderInSection = { dataSource, index in
-            return "header" + String(index)
-        }
-        
-        self.listDataSource.titleForFooterInSection = { dataSource, index in
-            return "footer" + String(index)
+            return SectionMainViewTitle.allCases[index].rawValue
         }
         
         self.viewModel
             .banchanList
-            .debug()
             .asObservable()
             .bind(to: listTableView.rx.items(dataSource: self.listDataSource))
             .disposed(by: rx.disposeBag)
     }
-    
-    private func getTableViewCell(_ tableView: UITableView, indexPath: IndexPath, item: Banchan) -> CustomMainCell {
-        var cell: CustomMainCell
-        let section: BanchanSection.Sectionitem = BanchanSection.getSctionType(indexPath.section)
-        switch section {
-        case .main: cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CustomMainCell
-            break
-        case .soup: cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CustomMainCell
-            break
-        case .side: cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CustomMainCell
-            break
-            
-        }
-        return cell
-    }
+}
+
+enum SectionMainViewTitle: String, CaseIterable {
+    case main = "모두가 좋아하는 든든한 메인요리"
+    case soup = "정성이 담긴 뜨끈뜨끈 국물요리"
+    case side = "식탁을 풍성하게 하는 정갈한 밑반찬"
 }

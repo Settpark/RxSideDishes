@@ -16,7 +16,7 @@
 		829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05726B907D300B7AED6 /* SceneCoordinator.swift */; };
 		829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05926B9121800B7AED6 /* CommonViewModel.swift */; };
 		829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05B26BA692400B7AED6 /* APIServiceType.swift */; };
-		829DC05E26BB83F900B7AED6 /* CustomMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05D26BB83F900B7AED6 /* CustomMainCell.swift */; };
+		829DC05E26BB83F900B7AED6 /* MainViewBanchanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05D26BB83F900B7AED6 /* MainViewBanchanCell.swift */; };
 		829DC06026BB8E6B00B7AED6 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05F26BB8E6B00B7AED6 /* Extension+UILabel.swift */; };
 		829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC06226BB9B4400B7AED6 /* BanchanSection.swift */; };
 		829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E56EA26B2738D0099C3A0 /* Banchans.swift */; };
@@ -26,6 +26,8 @@
 		829FFA6026B7D26B007925DF /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */; };
 		829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA6126B7D4ED007925DF /* TransitionModel.swift */; };
 		829FFA6426B7D6E5007925DF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA6326B7D6E5007925DF /* Scene.swift */; };
+		82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */; };
+		82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */; };
 		82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */; };
 		82ACD9F226B252F300CEE616 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F126B252F300CEE616 /* APIService.swift */; };
 		82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* Banchan.swift */; };
@@ -43,7 +45,7 @@
 		829DC05726B907D300B7AED6 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		829DC05926B9121800B7AED6 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		829DC05B26BA692400B7AED6 /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
-		829DC05D26BB83F900B7AED6 /* CustomMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainCell.swift; sourceTree = "<group>"; };
+		829DC05D26BB83F900B7AED6 /* MainViewBanchanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewBanchanCell.swift; sourceTree = "<group>"; };
 		829DC05F26BB8E6B00B7AED6 /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		829DC06226BB9B4400B7AED6 /* BanchanSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanSection.swift; sourceTree = "<group>"; };
 		829E56EA26B2738D0099C3A0 /* Banchans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchans.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableType.swift; sourceTree = "<group>"; };
 		829FFA6126B7D4ED007925DF /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		829FFA6326B7D6E5007925DF /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanDetailViewModel.swift; sourceTree = "<group>"; };
+		82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBanchanViewController.swift; sourceTree = "<group>"; };
 		82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanListViewModel.swift; sourceTree = "<group>"; };
 		82ACD9F126B252F300CEE616 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		82ACD9F326B2545F00CEE616 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				823C57AC26AE7EC300A2B80E /* MainViewController.swift */,
 				829FFA5D26B7CC96007925DF /* MainBanchanListViewController.swift */,
 				829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */,
+				82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -174,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				829FFA5726B7B367007925DF /* ViewController */,
-				829DC05D26BB83F900B7AED6 /* CustomMainCell.swift */,
+				829DC05D26BB83F900B7AED6 /* MainViewBanchanCell.swift */,
 				829DC06226BB9B4400B7AED6 /* BanchanSection.swift */,
 			);
 			path = View;
@@ -192,8 +197,9 @@
 		82ACD9EF26B252B300CEE616 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */,
 				829DC05926B9121800B7AED6 /* CommonViewModel.swift */,
+				82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */,
+				82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -329,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */,
-				829DC05E26BB83F900B7AED6 /* CustomMainCell.swift in Sources */,
+				829DC05E26BB83F900B7AED6 /* MainViewBanchanCell.swift in Sources */,
 				829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */,
 				829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */,
 				829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */,
@@ -337,9 +343,11 @@
 				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
 				829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */,
 				829FFA6426B7D6E5007925DF /* Scene.swift in Sources */,
+				82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */,
 				829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */,
 				829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */,
 				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
+				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
 				829DC06026BB8E6B00B7AED6 /* Extension+UILabel.swift in Sources */,
