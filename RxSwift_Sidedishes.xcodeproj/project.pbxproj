@@ -28,6 +28,8 @@
 		829FFA6426B7D6E5007925DF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA6326B7D6E5007925DF /* Scene.swift */; };
 		82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */; };
 		82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */; };
+		82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387A26C64D8B00A917E5 /* APIMaker.swift */; };
+		82AB387D26C64D9600A917E5 /* APIMakerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387C26C64D9600A917E5 /* APIMakerType.swift */; };
 		82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */; };
 		82ACD9F226B252F300CEE616 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F126B252F300CEE616 /* APIService.swift */; };
 		82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* Banchan.swift */; };
@@ -57,6 +59,8 @@
 		829FFA6326B7D6E5007925DF /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanDetailViewModel.swift; sourceTree = "<group>"; };
 		82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBanchanViewController.swift; sourceTree = "<group>"; };
+		82AB387A26C64D8B00A917E5 /* APIMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMaker.swift; sourceTree = "<group>"; };
+		82AB387C26C64D9600A917E5 /* APIMakerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerType.swift; sourceTree = "<group>"; };
 		82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanListViewModel.swift; sourceTree = "<group>"; };
 		82ACD9F126B252F300CEE616 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		82ACD9F326B2545F00CEE616 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 			children = (
 				82ACD9F126B252F300CEE616 /* APIService.swift */,
 				829DC05B26BA692400B7AED6 /* APIServiceType.swift */,
+				82AB387A26C64D8B00A917E5 /* APIMaker.swift */,
+				82AB387C26C64D9600A917E5 /* APIMakerType.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				829FFA6426B7D6E5007925DF /* Scene.swift in Sources */,
 				82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */,
 				829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */,
+				82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */,
 				829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */,
 				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
 				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
@@ -355,6 +362,7 @@
 				823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */,
 				829FFA5E26B7CC96007925DF /* MainBanchanListViewController.swift in Sources */,
 				82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */,
+				82AB387D26C64D9600A917E5 /* APIMakerType.swift in Sources */,
 				829FFA5A26B7C0B9007925DF /* BanchanStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

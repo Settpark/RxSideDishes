@@ -15,6 +15,8 @@ class BanchanStorage: BanchanStorageType {
     private var banchans: [BanchanSection] = [] //dictionary로 개선해보자!? 배열을 미리 만들어 놓자?
     
     private lazy var stores = PublishSubject<[BanchanSection]>()
+    private var apiEvent = PublishSubject<ApiServiceUseCase>()
+    
     private var apiService: APIServiceType
     
     init(apiService: APIServiceType) {
@@ -32,8 +34,12 @@ class BanchanStorage: BanchanStorageType {
         return Observable.just(Banchan())
     }
     
+    func fetchDetailPage(hash: String) {
+        
+    }
+    
     func fetchAllListMainPage() {
-        for i in 0..<ApiServiceUseCase.allCases.count {
+        for i in 0..<ApiServiceUseCase.allCases.count { //for문이 아닌 이벤트로 전달할 수 있을까??
             apiService.fetchDataWithRx(api: ApiServiceUseCase.allCases[i].rawValue)
                 .subscribe({ [weak self] emmiter in
                     switch emmiter {

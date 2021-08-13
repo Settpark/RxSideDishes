@@ -15,10 +15,17 @@ enum ApiServiceUseCase: String, CaseIterable {
     case side = "/side"
 }
 
-class APIService: APIServiceType {
-    private let mainURL: String = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
+class APIService: APIServiceType { //너는 왜 클래스니?
+//    private let mainURL: String = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
+    
+    private let apiMaker: APIMakerType
+    
+    init(apiMaker: APIMakerType) {
+        self.apiMaker = apiMaker
+    }
+    
     func fetchDataWithSession(api: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        guard let url = URL(string: mainURL + api) else {
+        guard let url = apiMaker.components.url else {
             return
         }
         let request = try! URLRequest.init(url: url, method: .get)
@@ -37,7 +44,7 @@ class APIService: APIServiceType {
     }
     
     func fetchDataWithAF(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        guard let url = URL(string: mainURL + API) else {
+        guard let url = apiMaker.components.url else {
             return
         }
         
