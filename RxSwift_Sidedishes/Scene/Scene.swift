@@ -9,7 +9,7 @@ import UIKit
 
 enum Scene {
     case MainList(BanchanListViewModel)
-    case Detail
+    case Detail(BanChanDetailViewModel)
 }
 
 extension Scene {
@@ -23,9 +23,10 @@ extension Scene {
             }
             listVC.bind(viewModel: viewModel)
             return nav
-        case .Detail:
-            print("아직")
-            return UIViewController()
+        case .Detail(let viewModel):
+            var detailVC = DetailBanchanViewController()
+            detailVC.bind(viewModel: viewModel)
+            return detailVC
         }
     }
 }

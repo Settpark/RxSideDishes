@@ -12,18 +12,18 @@ import RxCocoa
 
 class BanchanStorage: BanchanStorageType {
     
-    private var banchans: [BanchanSection] = []
+    private var banchans: [BanchanSection] = [] //dictionary로 개선해보자!? 배열을 미리 만들어 놓자?
     
     private lazy var stores = PublishSubject<[BanchanSection]>()
     private var apiService: APIServiceType
     
     init(apiService: APIServiceType) {
         self.apiService = apiService
-        fetchAllListMainPage()
     }
     
     @discardableResult
     func banchanList() -> Observable<[BanchanSection]> {
+        fetchAllListMainPage()
         return stores.asObservable()
     }
     
@@ -34,13 +34,13 @@ class BanchanStorage: BanchanStorageType {
     
     func fetchAllListMainPage() {
         for i in 0..<ApiServiceUseCase.allCases.count {
-            let _ = apiService.fetchDataWithRx(api: ApiServiceUseCase.allCases[i].rawValue)
+            apiService.fetchDataWithRx(api: ApiServiceUseCase.allCases[i].rawValue)
                 .subscribe({ [weak self] emmiter in
                     switch emmiter {
                     case .next(let data):
                         let temp = BanchanSection.init(sectionitem: BanchanSection.getSctionType(i), items: data)
                         self?.banchans.append(temp)
-                        self?.stores.onNext(self!.banchans)
+                        self?.stores.onNext(self!.banchans) //순서 상관없이
                     case .error(let error):
                         print(error)
                     case .completed:

@@ -92,7 +92,7 @@ class MainViewBanchanCell: UITableViewCell {
     
     func setConstraintsCellContents() {
 //        self.translatesAutoresizingMaskIntoConstraints = false //여기까지 내가 컨트롤 하고 싶은데 튀어버림
-        self.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        self.heightAnchor.constraint(equalToConstant: 100).isActive = true
 //        self.widthAnchor.constraint(equalToConstant: 500).isActive = true
         
         self.addSubview(self.image)

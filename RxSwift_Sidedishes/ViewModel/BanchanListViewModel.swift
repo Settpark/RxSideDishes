@@ -8,11 +8,11 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Action
 
 class BanchanListViewModel: CommonViewModel {
     
     var banchanList: Observable<[BanchanSection]> {
-        return storage.banchanList()
+        return storage.banchanList() //[[main],[soup],[side]]
     }
-    
 }

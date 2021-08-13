@@ -50,9 +50,9 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType {
 
 extension MainBanchanListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.viewModel.sceneCoordinator.transition(to: .Detail, using: .push, animated: true)
+        let detailViewModel = BanChanDetailViewModel(sceneCoordinator: self.viewModel.sceneCoordinator, storage: self.viewModel.storage)
+        self.viewModel.sceneCoordinator.transition(to: .Detail(detailViewModel), using: .push, animated: true)
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
