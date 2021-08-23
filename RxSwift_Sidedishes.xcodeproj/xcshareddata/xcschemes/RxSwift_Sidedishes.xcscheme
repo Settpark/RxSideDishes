@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "82ADD77526CB70F30045A911"
+               BuildableName = "RxSwift_SidedishesTests.xctest"
+               BlueprintName = "RxSwift_SidedishesTests"
+               ReferencedContainer = "container:RxSwift_Sidedishes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

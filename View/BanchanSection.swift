@@ -9,32 +9,26 @@ import Foundation
 import RxDataSources
 
 struct BanchanSection: SectionModelType {
-    var sectionitem: Sectionitem
+    var sectionitem: BanchanUsecase
     var items: [Banchan]
     
-    enum Sectionitem: Int {
-        case main
-        case soup
-        case side
-    }
-    
-    init(sectionitem: Sectionitem, items: [Banchan]) {
+    init(sectionitem: BanchanUsecase, items: [Banchan]) {
         self.sectionitem = sectionitem
         self.items = items
     }
     
-    static func getSctionType(_ rowValue: Int) -> Sectionitem {
-        var type: Sectionitem!
+    static func getSectionType(_ rowValue: Int) -> BanchanUsecase {
+        var type: BanchanUsecase!
         
         switch rowValue {
-        case Sectionitem.main.rawValue:
-            type = Sectionitem.main
+        case 0:
+            type = BanchanUsecase.main
             break
-        case Sectionitem.soup.rawValue:
-            type = Sectionitem.soup
+        case 1:
+            type = BanchanUsecase.soup
             break
-        case Sectionitem.side.rawValue:
-            type = Sectionitem.side
+        case 2:
+            type = BanchanUsecase.side
             break
         default:
             break

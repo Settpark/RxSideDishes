@@ -9,9 +9,7 @@ import Foundation
 import RxSwift
 
 protocol APIServiceType {
-    func fetchDataWithSession(api: String, onComplete: @escaping (Result<Banchans, Error>) -> Void)
+    func fetchDataWithSession(apiMaker: APIMaker, onComplete: @escaping (Result<Banchans, Error>) -> Void)
     
-    func fetchDataWithAF(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void)
-    
-    func fetchDataWithRx(api: String) -> Observable<[Banchan]>
+    func fetchDataWithRx(apiMaker: APIMaker) -> Observable<[Banchan]>
 }

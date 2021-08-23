@@ -9,22 +9,17 @@ import Foundation
 import Alamofire
 import RxSwift
 
-enum ApiServiceUseCase: String, CaseIterable {
+enum BanchanUsecase: String, CaseIterable {
     case main = "/main"
     case soup = "/soup"
     case side = "/side"
 }
 
 class APIService: APIServiceType { //너는 왜 클래스니?
-//    private let mainURL: String = "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com/develop/baminchan"
     
-    private let apiMaker: APIMakerType
+    //세션을 주입받고 mock URLSession
     
-    init(apiMaker: APIMakerType) {
-        self.apiMaker = apiMaker
-    }
-    
-    func fetchDataWithSession(api: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
+    func fetchDataWithSession(apiMaker: APIMaker, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
         guard let url = apiMaker.components.url else {
             return
         }
@@ -37,25 +32,15 @@ class APIService: APIServiceType { //너는 왜 클래스니?
             else {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let result = try! decoder.decode(Banchans.self, from: data!)
+                let result = try! decoder.decode(Banchans.self, from: data!) //에러처리
                 onComplete(.success(result))
             }
         }.resume()
     }
     
-    func fetchDataWithAF(API: String, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        guard let url = apiMaker.components.url else {
-            return
-        }
-        
-        AF.request(url, method: .get) { data in
-            
-        }
-    }
-    
-    func fetchDataWithRx(api: String) -> Observable<[Banchan]> {
+    func fetchDataWithRx(apiMaker: APIMaker) -> Observable<[Banchan]> {
         return Observable.create { [weak self] emmiter in
-            self?.fetchDataWithSession(api: api) { result in
+            self?.fetchDataWithSession(apiMaker: apiMaker) { result in
                 switch result {
                 case .success(let data):
                     emmiter.onNext(data.body)

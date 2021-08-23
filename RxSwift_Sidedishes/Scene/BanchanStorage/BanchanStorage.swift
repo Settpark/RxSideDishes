@@ -7,26 +7,28 @@
 
 import Foundation
 import RxSwift
-import NSObject_Rx
-import RxCocoa
 
 class BanchanStorage: BanchanStorageType {
     
-    private var banchans: [BanchanSection] = [] //dictionary로 개선해보자!? 배열을 미리 만들어 놓자?
+    private let disposeBag: DisposeBag
     
-    private lazy var stores = PublishSubject<[BanchanSection]>()
-    private var apiEvent = PublishSubject<ApiServiceUseCase>()
+    private var stores: PublishSubject<[Banchan]>
+    private var apiEvent = PublishSubject<BanchanUsecase>()
     
     private var apiService: APIServiceType
     
     init(apiService: APIServiceType) {
+        self.disposeBag = DisposeBag()
         self.apiService = apiService
+        self.stores = PublishSubject<[Banchan]>()
     }
     
     @discardableResult
-    func banchanList() -> Observable<[BanchanSection]> {
-        fetchAllListMainPage()
-        return stores.asObservable()
+    func banchanList(usecase: BanchanUsecase) -> Observable<[Banchan]> {
+            apiService.fetchDataWithRx(apiMaker: APIMaker.init(path: usecase))
+                .subscribe(self.stores)
+                .disposed(by: disposeBag)
+        return stores
     }
     
     @discardableResult
@@ -36,23 +38,5 @@ class BanchanStorage: BanchanStorageType {
     
     func fetchDetailPage(hash: String) {
         
-    }
-    
-    func fetchAllListMainPage() {
-        for i in 0..<ApiServiceUseCase.allCases.count { //for문이 아닌 이벤트로 전달할 수 있을까??
-            apiService.fetchDataWithRx(api: ApiServiceUseCase.allCases[i].rawValue)
-                .subscribe({ [weak self] emmiter in
-                    switch emmiter {
-                    case .next(let data):
-                        let temp = BanchanSection.init(sectionitem: BanchanSection.getSctionType(i), items: data)
-                        self?.banchans.append(temp)
-                        self?.stores.onNext(self!.banchans) //순서 상관없이
-                    case .error(let error):
-                        print(error)
-                    case .completed:
-                        break
-                    }
-                })
-        }
     }
 }

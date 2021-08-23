@@ -66,6 +66,7 @@ extension MainBanchanListViewController {
             guard let cell: MainViewBanchanCell = tableView.dequeueReusableCell(withIdentifier: MainViewBanchanCell.cellidentifier) as? MainViewBanchanCell else {
                 return UITableViewCell()
             }
+            
             cell.setContents(value: element)
             return cell
         })
@@ -76,7 +77,6 @@ extension MainBanchanListViewController {
         
         self.viewModel
             .banchanList
-            .asObservable()
             .bind(to: listTableView.rx.items(dataSource: self.listDataSource))
             .disposed(by: rx.disposeBag)
     }
