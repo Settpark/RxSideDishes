@@ -13,4 +13,12 @@ pod 'NSObject+Rx'
 pod 'RxDataSources'
 pod 'RxCoreData'
   # Pods for RxSwift_Sidedishes
+
+target 'RxSwift_SidedishesTests' do
+inherit! :search_paths
+
+pod 'RxTest'
+
+end
+
 end

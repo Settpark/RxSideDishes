@@ -1,4 +1,4 @@
-//
+
 //  BanchanListViewModel.swift
 //  RxSwift_Sidedishes
 //
@@ -9,30 +9,28 @@ import Foundation
 import RxSwift
 
 class BanchanListViewModel: CommonViewModel {
-    
+
     var banchanList: Observable<[BanchanSection]> {
-        let banchanList = PublishSubject<[BanchanSection]>()
-        var banchanSection = [BanchanUsecase:BanchanSection].init(minimumCapacity: BanchanUsecase.allCases.count)
+        let result = PublishSubject<[BanchanSection]>()
+        let allList: [BanchanUsecase:PublishSubject<BanchanSection>] = [.main: PublishSubject<BanchanSection>(), .soup: PublishSubject<BanchanSection>(), .side: PublishSubject<BanchanSection>()]
         
         Observable.from(BanchanUsecase.allCases)
-            .subscribe { [weak self] mycase in
+            .subscribe() { [weak self] mycase in
                 self?.storage.banchanList(usecase: mycase)
-                    .subscribe { emitter in
-                        switch emitter {
-                        case .next(let data):
-                            banchanSection[mycase] = BanchanSection.init(sectionitem: .main, items: data)
-                            guard let main = banchanSection[.main], let soup = banchanSection[.soup], let side = banchanSection[.side] else {
-                                return
-                            }
-                            let temp: [BanchanSection] = [main, soup, side]
-                            banchanList.onNext(temp)
-                        case .error(_):
-                            break
-                        case .completed:
-                            break
-                        }
-                    }.disposed(by: self!.rx.disposeBag)
+                    .subscribe(onNext: { data in
+                        let banchan = BanchanSection.init(sectionitem: mycase, items: data)
+                        allList[mycase]?.onNext(banchan)
+                    }).disposed(by: self!.rx.disposeBag)
             }.disposed(by: rx.disposeBag)
-        return banchanList
+        
+        Observable.combineLatest(allList[.main]!, allList[.soup]!, allList[.side]!) { main, soup, side  -> [BanchanSection] in
+            let combineResult = [main, soup ,side]
+            return combineResult
+        }.subscribe(onNext: { data in
+            result.onNext(data)
+        })
+        .disposed(by: rx.disposeBag)
+        
+        return result
     }
 }
