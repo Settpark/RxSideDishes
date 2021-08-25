@@ -15,10 +15,10 @@ pod 'RxCoreData'
   # Pods for RxSwift_Sidedishes
 
 target 'RxSwift_SidedishesTests' do
-inherit! :search_paths
-
-pod 'RxTest'
-
+  inherit! :search_paths
+  pod 'RxBlocking'
+  pod 'RxTest'
+  # Pods for testing
 end
 
 end

@@ -29,8 +29,4 @@ class BanchanStorage: BanchanStorageType {
     func orderBanchan() -> Observable<Banchan> {
         return Observable.just(Banchan())
     }
-    
-    func fetchDetailPage(hash: String) {
-        
-    }
 }

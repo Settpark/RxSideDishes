@@ -20,20 +20,28 @@ class APIService: APIServiceType { //너는 왜 클래스니?
     //세션을 주입받고 mock URLSession
     
     func fetchDataWithSession(apiMaker: APIMaker, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        guard let url = apiMaker.components.url else {
-            return
+        guard let validURL = apiMaker.components.url else {
+            return //에러가 났는지 모름.
         }
-        let request = try! URLRequest.init(url: url, method: .get)
+        
+        let request = apiMaker.createRequest(url: validURL)
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let localerr = error {
                 onComplete(.failure(localerr))
                 return
             }
             else {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let result = try! decoder.decode(Banchans.self, from: data!) //에러처리
-                onComplete(.success(result))
+                guard let validData = data else {
+                    return
+                }
+                let result = apiMaker.decodeData(type: Banchans.self, data: validData)
+                switch result {
+                case .success(let data):
+                    onComplete(.success(data))
+                case .failure(let error):
+                    onComplete(.failure(error))
+                }
             }
         }.resume()
     }

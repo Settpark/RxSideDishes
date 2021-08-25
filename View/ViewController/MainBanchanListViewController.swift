@@ -11,7 +11,7 @@ import RxCocoa
 import NSObject_Rx
 import RxDataSources
 
-class MainBanchanListViewController: UIViewController, ViewModelBindableType {
+class MainBanchanListViewController: UIViewController, ViewModelBindableType, AlertController {
     
     var viewModel: BanchanListViewModel!
     private var listTableView: UITableView
@@ -44,7 +44,15 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType {
     }
     
     func bindViewModel() {
+        viewModel.delegate = self
         initDatasource()
+    }
+    
+    func showAlertController(error: Error) { // -> 좀더 Rx 스럽게?
+        let alertController = UIAlertController.init(title: APIServiceError.failedDecoding.rawValue, message: error.localizedDescription, preferredStyle: .alert)
+        let alertaction = UIAlertAction.init(title: ButtonTitle.확인.rawValue, style: .destructive, handler: nil)
+        alertController.addAction(alertaction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

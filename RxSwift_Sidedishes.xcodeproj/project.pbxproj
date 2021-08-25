@@ -12,6 +12,8 @@
 		823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */; };
 		823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AC26AE7EC300A2B80E /* MainViewController.swift */; };
 		823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B126AE7EC500A2B80E /* Assets.xcassets */; };
+		8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235426D4A8DB00B6EA01 /* APIServiceError.swift */; };
+		8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235726D4BE5D00B6EA01 /* AlertController.swift */; };
 		829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */; };
 		829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05726B907D300B7AED6 /* SceneCoordinator.swift */; };
 		829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05926B9121800B7AED6 /* CommonViewModel.swift */; };
@@ -57,6 +59,9 @@
 		823C57AC26AE7EC300A2B80E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		823C57B126AE7EC500A2B80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823C57B626AE7EC500A2B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8283235426D4A8DB00B6EA01 /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
+		8283235726D4BE5D00B6EA01 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		8283235926D4E09200B6EA01 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		829DC05726B907D300B7AED6 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		829DC05926B9121800B7AED6 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
@@ -109,6 +114,7 @@
 		55DA8FAAB10A38212CFF5E85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8283235926D4E09200B6EA01 /* XCTest.framework */,
 				49095733A82460625278F8D2 /* Pods_RxSwift_Sidedishes.framework */,
 				FE5D89BCACE18E320CB56B28 /* Pods_RxSwift_SidedishesTests.framework */,
 			);
@@ -177,6 +183,7 @@
 				829FFA5D26B7CC96007925DF /* MainBanchanListViewController.swift */,
 				829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */,
 				82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */,
+				8283235726D4BE5D00B6EA01 /* AlertController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +251,7 @@
 				829DC05B26BA692400B7AED6 /* APIServiceType.swift */,
 				82AB387A26C64D8B00A917E5 /* APIMaker.swift */,
 				82AB387C26C64D9600A917E5 /* APIMakerType.swift */,
+				8283235426D4A8DB00B6EA01 /* APIServiceError.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -451,12 +459,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */,
 				829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */,
 				829DC05E26BB83F900B7AED6 /* MainViewBanchanCell.swift in Sources */,
 				829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */,
 				829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */,
 				829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */,
 				823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */,
+				8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */,
 				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
 				829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */,
 				829FFA6426B7D6E5007925DF /* Scene.swift in Sources */,

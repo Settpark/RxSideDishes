@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import RxTest
 
 @testable import RxSwift_Sidedishes
 
