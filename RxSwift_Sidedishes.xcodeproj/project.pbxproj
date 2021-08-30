@@ -12,6 +12,13 @@
 		823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */; };
 		823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AC26AE7EC300A2B80E /* MainViewController.swift */; };
 		823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B126AE7EC500A2B80E /* Assets.xcassets */; };
+		824F04ED26DCA6FA00300173 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707826D73F2400139F8F /* main.json */; };
+		824F04EE26DCA6FA00300173 /* soup.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707A26DC90FC00139F8F /* soup.json */; };
+		824F04EF26DCA6FA00300173 /* side.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707C26DC912B00139F8F /* side.json */; };
+		824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F04F026DCA99200300173 /* APIMakerStub.swift */; };
+		826F707926D73F2400139F8F /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707826D73F2400139F8F /* main.json */; };
+		826F707B26DC90FC00139F8F /* soup.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707A26DC90FC00139F8F /* soup.json */; };
+		826F707D26DC912B00139F8F /* side.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707C26DC912B00139F8F /* side.json */; };
 		8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235426D4A8DB00B6EA01 /* APIServiceError.swift */; };
 		8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235726D4BE5D00B6EA01 /* AlertController.swift */; };
 		829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */; };
@@ -59,6 +66,10 @@
 		823C57AC26AE7EC300A2B80E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		823C57B126AE7EC500A2B80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823C57B626AE7EC500A2B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		824F04F026DCA99200300173 /* APIMakerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerStub.swift; sourceTree = "<group>"; };
+		826F707826D73F2400139F8F /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		826F707A26DC90FC00139F8F /* soup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = soup.json; sourceTree = "<group>"; };
+		826F707C26DC912B00139F8F /* side.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = side.json; sourceTree = "<group>"; };
 		8283235426D4A8DB00B6EA01 /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		8283235726D4BE5D00B6EA01 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		8283235926D4E09200B6EA01 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -156,6 +167,16 @@
 			path = RxSwift_Sidedishes;
 			sourceTree = "<group>";
 		};
+		826F707726D73E9D00139F8F /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				826F707826D73F2400139F8F /* main.json */,
+				826F707A26DC90FC00139F8F /* soup.json */,
+				826F707C26DC912B00139F8F /* side.json */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		829DC06126BB8E7700B7AED6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +249,7 @@
 		82ACD9EA26B2425200CEE616 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				826F707726D73E9D00139F8F /* Test */,
 				82ACD9F326B2545F00CEE616 /* Banchan.swift */,
 				829E56EA26B2738D0099C3A0 /* Banchans.swift */,
 			);
@@ -252,6 +274,7 @@
 				82AB387A26C64D8B00A917E5 /* APIMaker.swift */,
 				82AB387C26C64D9600A917E5 /* APIMakerType.swift */,
 				8283235426D4A8DB00B6EA01 /* APIServiceError.swift */,
+				824F04F026DCA99200300173 /* APIMakerStub.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -360,6 +383,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824F04ED26DCA6FA00300173 /* main.json in Resources */,
+				824F04EE26DCA6FA00300173 /* soup.json in Resources */,
+				824F04EF26DCA6FA00300173 /* side.json in Resources */,
 				823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +394,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826F707B26DC90FC00139F8F /* soup.json in Resources */,
+				826F707D26DC912B00139F8F /* side.json in Resources */,
+				826F707926D73F2400139F8F /* main.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +504,7 @@
 				82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */,
 				829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */,
 				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
+				824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */,
 				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
@@ -617,6 +647,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;

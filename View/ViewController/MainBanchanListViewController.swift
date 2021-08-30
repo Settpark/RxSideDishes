@@ -16,6 +16,7 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
     var viewModel: BanchanListViewModel!
     private var listTableView: UITableView
     private var listDataSource: RxTableViewSectionedReloadDataSource<BanchanSection>!
+    private var data222 = Banchans.init()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.listTableView = UITableView()
@@ -31,6 +32,9 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
     override func viewDidLoad() {
         self.view.backgroundColor = .white
         super.viewDidLoad()
+        
+        let path = Bundle.main.url(forResource: "main", withExtension: "json")
+        print(path)
     }
     
     func initTableView() {
@@ -48,7 +52,7 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
         initDatasource()
     }
     
-    func showAlertController(error: Error) { // -> 좀더 Rx 스럽게?
+    func showAlertController(error: Error) {
         let alertController = UIAlertController.init(title: APIServiceError.failedDecoding.rawValue, message: error.localizedDescription, preferredStyle: .alert)
         let alertaction = UIAlertAction.init(title: ButtonTitle.확인.rawValue, style: .destructive, handler: nil)
         alertController.addAction(alertaction)

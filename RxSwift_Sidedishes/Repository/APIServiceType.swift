@@ -9,7 +9,15 @@ import Foundation
 import RxSwift
 
 protocol APIServiceType {
-    func fetchDataWithSession(apiMaker: APIMaker, onComplete: @escaping (Result<Banchans, Error>) -> Void)
+    func fetchDataWithSession(onComplete: @escaping (Result<Banchans, Error>) -> Void)
     
-    func fetchDataWithRx(apiMaker: APIMaker) -> Observable<[Banchan]>
+    func fetchDataWithRx() -> Observable<[Banchan]>
+}
+
+protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol {
+    
 }

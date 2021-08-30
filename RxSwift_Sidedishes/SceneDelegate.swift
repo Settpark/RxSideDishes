@@ -13,16 +13,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        #if RELEASE
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        let stroage = BanchanStorage(apiService: APIService())
+        let stroage = BanchanStorage(apiService: APIService(urlSessionManager: URLSession.shared))
         let coordinator = SceneCoordinator(window: self.window!)
         let banchanListViewModel = BanchanListViewModel.init(sceneCoordinator: coordinator, storage: stroage)
         let listScene = Scene.MainList(banchanListViewModel)
         
         coordinator.transition(to: listScene, using: .root, animated: true)
+        #elseif DEBUG
+        
+        #endif
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

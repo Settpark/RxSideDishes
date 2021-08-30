@@ -15,18 +15,24 @@ enum BanchanUsecase: String, CaseIterable {
     case side = "/side"
 }
 
-class APIService: APIServiceType { //너는 왜 클래스니?
+class APIService: APIServiceType {  //너는 왜 클래스니? //create Request //decoding //apimaker 가지고 있고
+                                    //apimaker의 함수를 통해서 url.초기화
+    var urlSessionManager: URLSessionProtocol
+    var apiMaker: APIMakerType
     
-    //세션을 주입받고 mock URLSession
+    init(urlSessionManager: URLSessionProtocol, apiMaker: APIMakerType) {
+        self.urlSessionManager = urlSessionManager
+        self.apiMaker = apiMaker
+    }
     
-    func fetchDataWithSession(apiMaker: APIMaker, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
+    func fetchDataWithSession(onComplete: @escaping (Result<Banchans, Error>) -> Void) {
         guard let validURL = apiMaker.components.url else {
             return //에러가 났는지 모름.
         }
         
         let request = apiMaker.createRequest(url: validURL)
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        self.urlSessionManager.dataTask(with: request) { [weak self] data, response, error in
             if let localerr = error {
                 onComplete(.failure(localerr))
                 return
@@ -35,20 +41,22 @@ class APIService: APIServiceType { //너는 왜 클래스니?
                 guard let validData = data else {
                     return
                 }
-                let result = apiMaker.decodeData(type: Banchans.self, data: validData)
+                let result = self?.apiMaker.decodeData(type: Banchans.self, data: validData)
                 switch result {
                 case .success(let data):
                     onComplete(.success(data))
                 case .failure(let error):
                     onComplete(.failure(error))
+                case .none:
+                    break
                 }
             }
         }.resume()
     }
     
-    func fetchDataWithRx(apiMaker: APIMaker) -> Observable<[Banchan]> {
+    func fetchDataWithRx() -> Observable<[Banchan]> {
         return Observable.create { [weak self] emmiter in
-            self?.fetchDataWithSession(apiMaker: apiMaker) { result in
+            self?.fetchDataWithSession() { result in
                 switch result {
                 case .success(let data):
                     emmiter.onNext(data.body)

@@ -12,7 +12,7 @@ class BanchanListViewModel: CommonViewModel {
     
     var delegate: AlertController?
     
-    var banchanList: Observable<[BanchanSection]> {
+    var banchanList: Observable<[BanchanSection]> { //상당히 상황에 고정적인 코드 테스트하기 나쁘다.
         let result = PublishSubject<[BanchanSection]>()
         let allList: [BanchanUsecase:PublishSubject<BanchanSection>] = [.main: PublishSubject<BanchanSection>(), .soup: PublishSubject<BanchanSection>(), .side: PublishSubject<BanchanSection>()]
         

@@ -21,6 +21,11 @@ struct APIMaker: APIMakerType {
         self.components.path = self.path
     }
     
+    init(forTestResource: String, ofType: String) {
+        let path = Bundle.main.path(forResource: forTestResource, ofType: ofType)
+        self.components = URLComponents.init(string: path!)!
+    }
+    
     func createValid(url: URL?) throws -> URL {
         guard let validURL = url else {
             throw APIServiceError.wrongURL
