@@ -32,9 +32,6 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
     override func viewDidLoad() {
         self.view.backgroundColor = .white
         super.viewDidLoad()
-        
-        let path = Bundle.main.url(forResource: "main", withExtension: "json")
-        print(path)
     }
     
     func initTableView() {

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Banchan: Decodable {
+struct Banchan: Decodable, Equatable {
+    
     let detailHash: String
     let image: String
     let alt: String

@@ -8,48 +8,21 @@
 import Foundation
 
 struct APIMaker: APIMakerType {
-    var path: String = "/develop/baminchan"
-    var components: URLComponents
+    var path: String = "/develop/baminchan/"
     
-    init(path: BanchanUsecase) {
-        self.path += path.rawValue
-        self.components = URLComponents() //이거 없으면 안돼!
+    func createValidURL(path: BanchanUsecase) -> URL {
+        let newPath = self.path + path.rawValue
         guard let baseURL = URLComponents(string: "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com") else {
-            return
+            return URL(string: "")! //여기를 어떻게 못하나..?
         }
-        self.components = baseURL
-        self.components.path = self.path
-    }
-    
-    init(forTestResource: String, ofType: String) {
-        let path = Bundle.main.path(forResource: forTestResource, ofType: ofType)
-        self.components = URLComponents.init(string: path!)!
-    }
-    
-    func createValid(url: URL?) throws -> URL {
-        guard let validURL = url else {
-            throw APIServiceError.wrongURL
+        var urlComponents = URLComponents.init()
+        urlComponents = baseURL
+        urlComponents.path = newPath
+        
+        guard let result = urlComponents.url else {
+            return URL(string: "")!
         }
-        return validURL
-    }
-    
-    func createRequest(url: URL) -> URLRequest {
-        var request: URLRequest = URLRequest.init(url: url)
-        do {
-            request = try URLRequest.init(url: url, method: .get)
-        } catch {
-            print(APIServiceError.wrongRequest)
-        }
-        return request
-    }
-    
-    func decodeData<T: Decodable>(type: T.Type, data: Data) -> Result<T,Error> {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        do {
-            return Result.success(try decoder.decode(T.self, from: data))
-        } catch {
-            return Result.failure(error)
-        }
+        
+        return result
     }
 }

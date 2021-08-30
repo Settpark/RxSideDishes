@@ -16,8 +16,8 @@ pod 'RxCoreData'
 
 target 'RxSwift_SidedishesTests' do
   inherit! :search_paths
-  pod 'RxBlocking'
   pod 'RxTest'
+  pod 'RxBlocking'
   # Pods for testing
 end
 

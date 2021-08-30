@@ -8,7 +8,12 @@
 import Foundation
 import RxDataSources
 
-struct BanchanSection: SectionModelType {
+struct BanchanSection: SectionModelType, Equatable {
+    
+    static func == (lhs: BanchanSection, rhs: BanchanSection) -> Bool {
+        return lhs.sectionitem == rhs.sectionitem && lhs.items == rhs.items
+    }
+    
     var sectionitem: BanchanUsecase
     var items: [Banchan]
     

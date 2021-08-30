@@ -6,9 +6,7 @@
 //
 
 import XCTest
-import RxTest
 import RxSwift
-@testable import Alamofire
 
 @testable import RxSwift_Sidedishes
 
@@ -22,87 +20,12 @@ final class SessionManagerStub: URLSessionProtocol {
     }
 }
 
-//final class URLSessionStub: URLSessionProtocol {
-//
-//    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-//        let file = try! Bundle.main.path(forResource: "test", ofType: "json")
-//        let data = try! Data(contentsOf: file!)
-//        completionHandler(data, nil, nil)
-//        return MockSessionDataTask.init()
-//    }
-//
-//}
-
-final class ApiServiceStub: APIServiceType {
-    func fetchDataWithSession(apiMaker: APIMakerType, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        
-    }
-    
-    func fetchDataWithRx(apiMaker: APIMakerType) -> Observable<[Banchan]> {
-        <#code#>
-    }
-    
-
-
-    func fetchDataWithSession(apiMaker: APIMaker, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        let request = try! URLRequest(url: URL(string: "URL")!)
-        self.urlSessionStub.dataTask(with: request) { data, response, error in
-            let decoder = JSONDecoder()
-            let result = try! decoder.decode(Banchans.self, from: data!)
-            onComplete(.success(result))
-        }
-    }
-
-    func fetchDataWithRx(apiMaker: APIMaker) -> Observable<[Banchan]> {
-        return Observable.create { [weak self] emmiter in
-            self?.fetchDataWithSession(apiMaker: apiMaker) { result in
-                switch result {
-                case .success(let data):
-                    emmiter.onNext(data.body)
-                    emmiter.onCompleted()
-                case .failure(let error):
-                    emmiter.onError(error)
-                }
-            }
-            return Disposables.create()
-        }
-    }
-
-
-    let urlSessionStub: URLSessionProtocol
-
-    init(urlSessionStub: URLSessionProtocol) {
-        self.urlSessionStub = urlSessionStub
-    }
-}
-
 class MockSessionDataTask: URLSessionDataTask {
     override init() {
         
     }
     
     override func resume() {
-        
-    }
-}
-
-final class repositoryStub: BanchanStorageType {
-    
-    var apiService: APIServiceType
-    
-    init(apiService: APIServiceType) {
-        self.apiService = apiService
-    }
-    
-    func banchanList(usecase: BanchanUsecase) -> Observable<[Banchan]> {
-        return apiService.fetchDataWithRx(apiMaker: APIMaker(path: usecase))
-    }
-    
-    func orderBanchan() -> Observable<Banchan> {
-        return Observable.just(Banchan.empty)
-    }
-    
-    func fetchLocalData(completion: @escaping (Result<Banchans, Error>) -> Void) {
         
     }
 }
@@ -124,33 +47,34 @@ class RxSwift_SidedishesTests: XCTestCase {
     func test올바른_네트워크_리퀘스트를_만들었는가() {
         //given
         let sessionManager = SessionManagerStub()
-        let service = APIService.init(urlSessionManager: sessionManager)
+        let service = APIService.init(urlSessionManager: sessionManager, apiMaker: APIMaker())
         //when
-        service.fetchDataWithSession(apiMaker: APIMaker.init(path: .main)) { _ in }
+        service.fetchDataWithSession(usecase: .main, onComplete: { _ in })
         //then
         let request = sessionManager.request
-        let testtarget = APIMaker.init(path: .main)
-        XCTAssertEqual(request, testtarget.createRequest(url: testtarget.components.url!))
+        let testURL = APIMaker().createValidURL(path: .soup)
+        XCTAssertEqual(request, service.createRequest(url: testURL))
     }
     
     func test뷰_모델의_로직은_올바른가() {
         //given
-        let apiService = APIService.init(urlSessionManager: URLSession.shared)
+        let apiService = APIService.init(urlSessionManager: URLSession.shared, apiMaker: APIMakerStub.init())
         let coordinator = SceneCoordinator.init(window: UIWindow.init())
         let repo = BanchanStorage.init(apiService: apiService)
         let viewModel = BanchanListViewModel.init(sceneCoordinator: coordinator, storage: repo)
         
-        let jsonData = Bundle.main.path(forResource: "main", ofType: "json", inDirectory: "/Model/Test")
-        print(jsonData)
-        
-        var result: [BanchanSection] = []
+        let decodedData = DecodedData.init(decoder: JSONDecoder())
+        let result: [BanchanSection] = decodedData.testData()
+        let promise = expectation(description: "성공!")
         
         //when
         viewModel.banchanList
-            .subscribe() { data in
-                result = data
+            .subscribe() { emitter in
+                XCTAssertEqual(emitter.element, result)
+                promise.fulfill()
             }.disposed(by: rx.disposeBag)
         
+        wait(for: [promise], timeout: 5)
         //then
     }
     
