@@ -16,7 +16,7 @@ enum BanchanUsecase: String, CaseIterable {
 }
 
 class APIService: APIServiceType {  //너는 왜 클래스니? //create Request //decoding //apimaker 가지고 있고
-                                    //apimaker의 함수를 통해서 url.초기화
+    //apimaker의 함수를 통해서 url.초기화
     var urlSessionManager: URLSessionProtocol
     var apiMaker: APIMakerType
     

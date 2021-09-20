@@ -62,9 +62,32 @@ extension MainBanchanListViewController: UITableViewDelegate {
         let detailViewModel = BanChanDetailViewModel(sceneCoordinator: self.viewModel.sceneCoordinator, storage: self.viewModel.storage)
         self.viewModel.sceneCoordinator.transition(to: .Detail(detailViewModel), using: .push, animated: true)
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return self.view.frame.height / TableViewSizeProperties.tableViewRatio.rawValue
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return TableViewSizeProperties.headerViewSize.rawValue + 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: .zero, y: .zero, width: self.view.frame.width, height: self.view.frame.height))
+        headerView.backgroundColor = .white
+
+        let title = UILabel.init(title: SectionMainViewTitle.allCases[section].rawValue, size: TableViewSizeProperties.headerViewSize.rawValue)
+        title.sizeToFit()
+        headerView.addSubview(title)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+
+        return headerView
+    }
+}
+
+enum TableViewSizeProperties: CGFloat {
+    case tableViewRatio = 8
+    case headerViewSize = 24
 }
 
 extension MainBanchanListViewController {
@@ -79,10 +102,6 @@ extension MainBanchanListViewController {
             cell.setContents(value: element)
             return cell
         })
-        
-        self.listDataSource.titleForHeaderInSection = { dataSource, index in
-            return SectionMainViewTitle.allCases[index].rawValue
-        }
         
         self.viewModel
             .banchanList

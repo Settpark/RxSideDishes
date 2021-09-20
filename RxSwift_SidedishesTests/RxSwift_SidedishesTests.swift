@@ -52,7 +52,7 @@ class RxSwift_SidedishesTests: XCTestCase {
         service.fetchDataWithSession(usecase: .main, onComplete: { _ in })
         //then
         let request = sessionManager.request
-        let testURL = APIMaker().createValidURL(path: .soup)
+        let testURL = APIMaker().createValidURL(path: .main)
         XCTAssertEqual(request, service.createRequest(url: testURL))
     }
     

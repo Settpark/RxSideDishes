@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import SnapKit
 
 class MainViewBanchanCell: UITableViewCell {
     
@@ -19,7 +20,7 @@ class MainViewBanchanCell: UITableViewCell {
     private var stackviewForPrice: UIStackView
     private var stackviewForDeliveryType: UIStackView
         
-    private var image: UIImageView
+    var image: UIImageView
     private var title: UILabel
     private var banchanDescription: UILabel
     private var sPrice: UILabel
@@ -97,18 +98,28 @@ class MainViewBanchanCell: UITableViewCell {
 //        self.widthAnchor.constraint(equalToConstant: 500).isActive = true
         
         self.addSubview(self.image)
-        self.image.translatesAutoresizingMaskIntoConstraints = false
-        self.image.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        self.image.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        self.image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
-        self.image.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        self.image.snp.makeConstraints() { make in
+            make.width.height.equalTo(100)
+            make.left.equalTo(self.snp.left).offset(10)
+            make.centerY.equalTo(self.snp.centerY)
+        }
+        
+//        self.image.translatesAutoresizingMaskIntoConstraints = false
+//        self.image.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        self.image.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        self.image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
+//        self.image.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         self.addSubview(self.cellContainView)
-        self.cellContainView.frame.size = CGSize(width: self.frame.width - self.image.frame.width - 1, height: self.frame.height - 1)
-        self.cellContainView.translatesAutoresizingMaskIntoConstraints = false
-        self.cellContainView.topAnchor.constraint(equalTo: self.topAnchor, constant: 1).isActive = true
-        self.cellContainView.leadingAnchor.constraint(equalTo: self.image.trailingAnchor, constant: 1).isActive = true
-        self.cellContainView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        self.cellContainView.snp.makeConstraints { make in
+            make.left.equalTo(self.image.snp.right).offset(1)
+        }
+        
+//        self.cellContainView.frame.size = CGSize(width: self.frame.width - self.image.frame.width - 1, height: self.frame.height - 1)
+//        self.cellContainView.translatesAutoresizingMaskIntoConstraints = false
+//        self.cellContainView.topAnchor.constraint(equalTo: self.topAnchor, constant: 1).isActive = true
+//        self.cellContainView.leadingAnchor.constraint(equalTo: self.image.trailingAnchor, constant: 1).isActive = true
+//        self.cellContainView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
         self.cellContainView.addArrangedSubview(self.title)
         self.title.font = .systemFont(ofSize: 15)
@@ -119,23 +130,32 @@ class MainViewBanchanCell: UITableViewCell {
         self.banchanDescription.sizeToFit()
         
         self.cellContainView.addArrangedSubview(self.stackviewForPrice)
-        self.stackviewForPrice.translatesAutoresizingMaskIntoConstraints = false
-        self.stackviewForPrice.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
+        self.stackviewForPrice.snp.makeConstraints { make in
+            make.left.equalTo(cellContainView.snp.left)
+        }
+//        self.stackviewForPrice.translatesAutoresizingMaskIntoConstraints = false
+//        self.stackviewForPrice.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
         
         self.stackviewForPrice.addArrangedSubview(sPrice)
         self.stackviewForPrice.addArrangedSubview(nPrice)
         
         self.cellContainView.addArrangedSubview(self.stackviewForBadge)
-        self.stackviewForBadge.translatesAutoresizingMaskIntoConstraints = false
-        self.stackviewForBadge.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
+        self.cellContainView.snp.makeConstraints { make in
+            make.left.equalTo(cellContainView.snp.left)
+        }
+//        self.stackviewForBadge.translatesAutoresizingMaskIntoConstraints = false
+//        self.stackviewForBadge.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
         
         self.badge.forEach { label in
             self.stackviewForBadge.addArrangedSubview(label)
         }
         
         self.cellContainView.addArrangedSubview(self.stackviewForDeliveryType)
-        self.stackviewForDeliveryType.translatesAutoresizingMaskIntoConstraints = false
-        self.stackviewForDeliveryType.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
+        self.stackviewForDeliveryType.snp.makeConstraints { make in
+            make.left.equalTo(self.cellContainView.snp.left)
+        }
+//        self.stackviewForDeliveryType.translatesAutoresizingMaskIntoConstraints = false
+//        self.stackviewForDeliveryType.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
         
         self.deliveryType.forEach { label in
             self.stackviewForDeliveryType.addArrangedSubview(label)
@@ -144,11 +164,11 @@ class MainViewBanchanCell: UITableViewCell {
     
     func initbadgeAndDeliveryType(badge: [String], deliveryType: [String]) {
         badge.forEach { string in
-            let label = UILabel.init(title: string)
+            let label = UILabel.init(title: string, size: 14)
             self.badge.append(label)
         }
         deliveryType.forEach { string in
-            let label = UILabel.init(title: string)
+            let label = UILabel.init(title: string, size: 14)
             self.deliveryType.append(label)
         }
     }

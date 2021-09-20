@@ -12,6 +12,7 @@ pod 'Action'
 pod 'NSObject+Rx'
 pod 'RxDataSources'
 pod 'RxCoreData'
+pod 'SnapKit'
   # Pods for RxSwift_Sidedishes
 
 target 'RxSwift_SidedishesTests' do
