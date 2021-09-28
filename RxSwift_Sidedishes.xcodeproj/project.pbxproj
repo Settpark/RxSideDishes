@@ -45,6 +45,7 @@
 		82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* Banchan.swift */; };
 		82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AD88CD26DCC3880082F165 /* DecodedData.swift */; };
 		82ADD77926CB70F40045A911 /* RxSwift_SidedishesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */; };
+		82C6625F270305C900631D05 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6625E270305C900631D05 /* ImageCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		82ADD77626CB70F30045A911 /* RxSwift_SidedishesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwift_SidedishesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_SidedishesTests.swift; sourceTree = "<group>"; };
 		82ADD77A26CB70F40045A911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82C6625E270305C900631D05 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		90147A67744AE797B38A4A33 /* Pods-RxSwift_Sidedishes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_Sidedishes.release.xcconfig"; path = "Target Support Files/Pods-RxSwift_Sidedishes/Pods-RxSwift_Sidedishes.release.xcconfig"; sourceTree = "<group>"; };
 		A5C901CAECDE920B1FA8B55A /* Pods-RxSwift_Sidedishes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_Sidedishes.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift_Sidedishes/Pods-RxSwift_Sidedishes.debug.xcconfig"; sourceTree = "<group>"; };
 		D0BC92D5D08925B0152BE3BC /* Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests/Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */ = {
 			isa = PBXGroup;
 			children = (
+				82C6625D270305BC00631D05 /* TEMP */,
 				829DC06126BB8E7700B7AED6 /* Extension */,
 				829FFA5626B7B338007925DF /* Scene */,
 				82ACD9F026B252DF00CEE616 /* Repository */,
@@ -291,6 +294,14 @@
 				82ADD77A26CB70F40045A911 /* Info.plist */,
 			);
 			path = RxSwift_SidedishesTests;
+			sourceTree = "<group>";
+		};
+		82C6625D270305BC00631D05 /* TEMP */ = {
+			isa = PBXGroup;
+			children = (
+				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
+			);
+			path = TEMP;
 			sourceTree = "<group>";
 		};
 		B6106C18620AD5C636509D71 /* Pods */ = {
@@ -514,6 +525,7 @@
 				824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */,
 				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
 				82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */,
+				82C6625F270305C900631D05 /* ImageCacheManager.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
 				829DC06026BB8E6B00B7AED6 /* Extension+UILabel.swift in Sources */,
