@@ -20,7 +20,7 @@ class MainViewBanchanCell: UITableViewCell {
     private var stackviewForPrice: UIStackView
     private var stackviewForDeliveryType: UIStackView
         
-    var image: UIImageView
+    private var image: UIImageView
     private var title: UILabel
     private var banchanDescription: UILabel
     private var sPrice: UILabel
@@ -84,6 +84,7 @@ class MainViewBanchanCell: UITableViewCell {
     }
     
     func setContents(value: Banchan) {
+        self.image.setImageUrl(value.image)
         self.title.text = value.title
         self.banchanDescription.text = value.description
         self.sPrice.text = value.sPrice
