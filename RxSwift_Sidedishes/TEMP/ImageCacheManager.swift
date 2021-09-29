@@ -1,15 +1,13 @@
-# RxSideDishes
+//
+//  ImageCacheManager.swift
+//  RxSwift_Sidedishes
+//
+//  Created by 박정하 on 2021/09/28.
+//
 
-### 1. Sequence Diagram
+import Foundation
+import UIKit
 
-<p align="center"><img src="ReadmeImage/Banchan_Sequence_Diagram.png" width="" height="270"/>
-
-
-### 2. ImageCache
-
-1. 1차시도(메모리 캐시) - ImageCache매니저를 싱글톤으로 생성하고, UIImageView를 Extension함.
-
-```Swift
 class ImageCacheManager {
     static let shared = NSCache<NSString, UIImage>()
     
@@ -39,7 +37,7 @@ extension UIImageView {
                     DispatchQueue.main.async {
                         if let data = data, let image = UIImage(data: data) {
                             ImageCacheManager.shared.setObject(image, forKey: cacheKey)
-                            print("네트워크에서 가져옴")
+                            print("네트워크에서 가져옴") 
                             self.image = image
                         }
                     }
@@ -48,5 +46,3 @@ extension UIImageView {
         }
     }
 }
-
-```
