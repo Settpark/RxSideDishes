@@ -10,8 +10,8 @@ import RxSwift
 
 protocol BanchanStorageType {    
     @discardableResult
-    func banchanList(usecase: BanchanUsecase) -> Observable<[Banchan]>
+    func banchanList(usecase: BanchanUsecase) -> Observable<[BanchanDTO]>
     
     @discardableResult
-    func orderBanchan() -> Observable<Banchan>
+    func orderBanchan() -> Observable<BanchanDTO>
 }

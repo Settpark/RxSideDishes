@@ -21,12 +21,12 @@ class BanchanStorage: BanchanStorageType {
     }
     
     @discardableResult
-    func banchanList(usecase: BanchanUsecase) -> Observable<[Banchan]> { //여기서 usecase만 전달 //apiService에선 주입받은 apimaker를 바탕으로 동작하도록
+    func banchanList(usecase: BanchanUsecase) -> Observable<[BanchanDTO]> { //여기서 usecase만 전달 //apiService에선 주입받은 apimaker를 바탕으로 동작하도록
         return apiService.fetchDataWithRx(usecase: usecase)
     }
     
     @discardableResult
-    func orderBanchan() -> Observable<Banchan> {
-        return Observable.just(Banchan())
+    func orderBanchan() -> Observable<BanchanDTO> {
+        return Observable.just(BanchanDTO())
     }
 }

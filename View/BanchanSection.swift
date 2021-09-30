@@ -15,9 +15,9 @@ struct BanchanSection: SectionModelType, Equatable {
     }
     
     var sectionitem: BanchanUsecase
-    var items: [Banchan]
+    var items: [BanchanDTO]
     
-    init(sectionitem: BanchanUsecase, items: [Banchan]) {
+    init(sectionitem: BanchanUsecase, items: [BanchanDTO]) {
         self.sectionitem = sectionitem
         self.items = items
     }
@@ -41,7 +41,7 @@ struct BanchanSection: SectionModelType, Equatable {
         return type
     }
     
-    init(original: BanchanSection, items: [Banchan]) {
+    init(original: BanchanSection, items: [BanchanDTO]) {
         self = original
         self.items = items
     }

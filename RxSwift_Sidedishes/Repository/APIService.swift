@@ -52,7 +52,7 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         }.resume()
     }
     
-    func fetchDataWithRx(usecase: BanchanUsecase) -> Observable<[Banchan]> {
+    func fetchDataWithRx(usecase: BanchanUsecase) -> Observable<[BanchanDTO]> {
         return Observable.create { [weak self] emmiter in
             self?.fetchDataWithSession(usecase: usecase) { result in
                 switch result {

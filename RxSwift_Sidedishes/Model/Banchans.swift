@@ -8,7 +8,7 @@
 import Foundation
 
 class Banchans: Decodable {
-    var body: [Banchan]
+    var body: [BanchanDTO]
     
     init() {
         body = []

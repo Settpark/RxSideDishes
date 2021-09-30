@@ -42,7 +42,7 @@
 		82AB387D26C64D9600A917E5 /* APIMakerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387C26C64D9600A917E5 /* APIMakerType.swift */; };
 		82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */; };
 		82ACD9F226B252F300CEE616 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F126B252F300CEE616 /* APIService.swift */; };
-		82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* Banchan.swift */; };
+		82ACD9F426B2545F00CEE616 /* BanchanDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */; };
 		82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AD88CD26DCC3880082F165 /* DecodedData.swift */; };
 		82ADD77926CB70F40045A911 /* RxSwift_SidedishesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */; };
 		82C6625F270305C900631D05 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6625E270305C900631D05 /* ImageCacheManager.swift */; };
@@ -96,7 +96,7 @@
 		82AB387C26C64D9600A917E5 /* APIMakerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerType.swift; sourceTree = "<group>"; };
 		82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanListViewModel.swift; sourceTree = "<group>"; };
 		82ACD9F126B252F300CEE616 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		82ACD9F326B2545F00CEE616 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
+		82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDTO.swift; sourceTree = "<group>"; };
 		82AD88CD26DCC3880082F165 /* DecodedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodedData.swift; sourceTree = "<group>"; };
 		82ADD77626CB70F30045A911 /* RxSwift_SidedishesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwift_SidedishesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_SidedishesTests.swift; sourceTree = "<group>"; };
@@ -162,7 +162,6 @@
 		823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */ = {
 			isa = PBXGroup;
 			children = (
-				82C6625D270305BC00631D05 /* TEMP */,
 				829DC06126BB8E7700B7AED6 /* Extension */,
 				829FFA5626B7B338007925DF /* Scene */,
 				82ACD9F026B252DF00CEE616 /* Repository */,
@@ -258,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				826F707726D73E9D00139F8F /* Test */,
-				82ACD9F326B2545F00CEE616 /* Banchan.swift */,
+				82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */,
 				829E56EA26B2738D0099C3A0 /* Banchans.swift */,
 			);
 			path = Model;
@@ -277,6 +276,7 @@
 		82ACD9F026B252DF00CEE616 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
 				82ACD9F126B252F300CEE616 /* APIService.swift */,
 				829DC05B26BA692400B7AED6 /* APIServiceType.swift */,
 				82AB387A26C64D8B00A917E5 /* APIMaker.swift */,
@@ -294,14 +294,6 @@
 				82ADD77A26CB70F40045A911 /* Info.plist */,
 			);
 			path = RxSwift_SidedishesTests;
-			sourceTree = "<group>";
-		};
-		82C6625D270305BC00631D05 /* TEMP */ = {
-			isa = PBXGroup;
-			children = (
-				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
-			);
-			path = TEMP;
 			sourceTree = "<group>";
 		};
 		B6106C18620AD5C636509D71 /* Pods */ = {
@@ -521,7 +513,7 @@
 				829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */,
 				82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */,
 				829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */,
-				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
+				82ACD9F426B2545F00CEE616 /* BanchanDTO.swift in Sources */,
 				824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */,
 				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
 				82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */,

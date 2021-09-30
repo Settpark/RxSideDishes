@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Banchan: Decodable, Equatable {
+struct BanchanDTO: Decodable, Equatable {
     
     let detailHash: String
     let image: String
@@ -19,7 +19,7 @@ struct Banchan: Decodable, Equatable {
     let sPrice: String
     let badge: [String]?
     
-    static var empty = Banchan.init()
+    static var empty = BanchanDTO.init()
     
     init() {
         detailHash = ""

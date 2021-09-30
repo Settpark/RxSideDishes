@@ -11,7 +11,7 @@ import RxSwift
 protocol APIServiceType {
     func fetchDataWithSession(usecase: BanchanUsecase, onComplete: @escaping (Result<Banchans, Error>) -> Void)
     
-    func fetchDataWithRx(usecase: BanchanUsecase) -> Observable<[Banchan]>
+    func fetchDataWithRx(usecase: BanchanUsecase) -> Observable<[BanchanDTO]>
     
     func createRequest(url: URL) -> URLRequest
     

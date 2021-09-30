@@ -83,8 +83,8 @@ class MainViewBanchanCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setContents(value: Banchan) {
-        self.image.setImageUrl(value.image)
+    func setContents(value: BanchanDTO) {
+        self.image = value.image
         self.title.text = value.title
         self.banchanDescription.text = value.description
         self.sPrice.text = value.sPrice
