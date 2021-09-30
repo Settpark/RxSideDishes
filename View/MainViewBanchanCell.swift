@@ -20,7 +20,7 @@ class MainViewBanchanCell: UITableViewCell {
     private var stackviewForPrice: UIStackView
     private var stackviewForDeliveryType: UIStackView
         
-    private var image: UIImageView
+    private var banchanimage: UIImageView
     private var title: UILabel
     private var banchanDescription: UILabel
     private var sPrice: UILabel
@@ -46,7 +46,7 @@ class MainViewBanchanCell: UITableViewCell {
         stackviewForDeliveryType.axis = .horizontal
         stackviewForDeliveryType.contentMode = .left
         
-        self.image = UIImageView()
+        self.banchanimage = UIImageView()
         self.title = UILabel()
         self.banchanDescription = UILabel()
         self.sPrice = UILabel()
@@ -83,8 +83,8 @@ class MainViewBanchanCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setContents(value: BanchanDTO) {
-        self.image = value.image
+    func setContents(value: Banchan) {
+        self.banchanimage.image = value.image
         self.title.text = value.title
         self.banchanDescription.text = value.description
         self.sPrice.text = value.sPrice
@@ -98,8 +98,8 @@ class MainViewBanchanCell: UITableViewCell {
 //        self.heightAnchor.constraint(equalToConstant: 100).isActive = true
 //        self.widthAnchor.constraint(equalToConstant: 500).isActive = true
         
-        self.addSubview(self.image)
-        self.image.snp.makeConstraints() { make in
+        self.addSubview(self.banchanimage)
+        self.banchanimage.snp.makeConstraints() { make in
             make.width.height.equalTo(100)
             make.left.equalTo(self.snp.left).offset(10)
             make.centerY.equalTo(self.snp.centerY)
@@ -113,7 +113,7 @@ class MainViewBanchanCell: UITableViewCell {
         
         self.addSubview(self.cellContainView)
         self.cellContainView.snp.makeConstraints { make in
-            make.left.equalTo(self.image.snp.right).offset(1)
+            make.left.equalTo(self.banchanimage.snp.right).offset(1)
         }
         
 //        self.cellContainView.frame.size = CGSize(width: self.frame.width - self.image.frame.width - 1, height: self.frame.height - 1)

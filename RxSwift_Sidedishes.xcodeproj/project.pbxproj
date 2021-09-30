@@ -22,6 +22,7 @@
 		826F707D26DC912B00139F8F /* side.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707C26DC912B00139F8F /* side.json */; };
 		8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235426D4A8DB00B6EA01 /* APIServiceError.swift */; };
 		8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235726D4BE5D00B6EA01 /* AlertController.swift */; };
+		829CEE9B2705F9F500C8B4AA /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CEE9A2705F9F500C8B4AA /* Banchan.swift */; };
 		829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */; };
 		829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05726B907D300B7AED6 /* SceneCoordinator.swift */; };
 		829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05926B9121800B7AED6 /* CommonViewModel.swift */; };
@@ -76,6 +77,7 @@
 		8283235426D4A8DB00B6EA01 /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		8283235726D4BE5D00B6EA01 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		8283235926D4E09200B6EA01 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		829CEE9A2705F9F500C8B4AA /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
 		829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		829DC05726B907D300B7AED6 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		829DC05926B9121800B7AED6 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				826F707726D73E9D00139F8F /* Test */,
 				82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */,
 				829E56EA26B2738D0099C3A0 /* Banchans.swift */,
+				829CEE9A2705F9F500C8B4AA /* Banchan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */,
 				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
 				82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */,
+				829CEE9B2705F9F500C8B4AA /* Banchan.swift in Sources */,
 				82C6625F270305C900631D05 /* ImageCacheManager.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
