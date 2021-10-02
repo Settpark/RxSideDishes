@@ -5,36 +5,39 @@
 //  Created by 박정하 on 2021/09/28.
 //
 
-import Foundation
 import UIKit
 
 class ImageCacheManager {
     
     let cacheManager: NSCache<NSString, UIImage>
+    let apiservice: APIServiceType
     
-    init() {
-        cacheManager = NSCache<NSString, UIImage>()
+    init(apiservice: APIServiceType) {
+        self.cacheManager = NSCache<NSString, UIImage>()
+        self.apiservice = apiservice
     }
     
-    func fetchImage(url: String) -> UIImage {
+    func getCachedImage(url: String, onComplete: @escaping (Result<UIImage, Error>) -> Void) {
         let cacheKey = NSString(string: url)
-        var resultImage = UIImage()
+        var resultImage = UIImage(systemName: "arrow.uturn.up")!
         
         if let cachedImage = cacheManager.object(forKey: cacheKey) {
-            return cachedImage
+            onComplete(.success(cachedImage))
+            print("캐시에서")
         }
-        
-        if let url = URL(string: url) {
-            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-                if let _ = error {
-                    resultImage = UIImage()
-                }
-                if let data = data, let image = UIImage(data: data) {
-                    self?.cacheManager.setObject(image, forKey: cacheKey)
-                    resultImage = image
+        else {
+            self.apiservice.getfetchedImage(url: url) { result in
+                switch result {
+                case .success(let image):
+                    self.cacheManager.setObject(resultImage, forKey: cacheKey)
+                    onComplete(.success(image))
+                    print("네트워크에서")
+                case .failure(_):
+                    resultImage = UIImage(systemName: "trash") ?? UIImage()
                 }
             }
-            return resultImage
         }
     }
+    
+    
 }

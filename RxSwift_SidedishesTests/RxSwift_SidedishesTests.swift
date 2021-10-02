@@ -60,7 +60,7 @@ class RxSwift_SidedishesTests: XCTestCase {
         //given
         let apiService = APIService.init(urlSessionManager: URLSession.shared, apiMaker: APIMakerStub.init())
         let coordinator = SceneCoordinator.init(window: UIWindow.init())
-        let repo = BanchanStorage.init(apiService: apiService)
+        let repo = BanchanRepository.init(apiService: apiService)
         let viewModel = BanchanListViewModel.init(sceneCoordinator: coordinator, storage: repo)
         
         let decodedData = DecodedData.init(decoder: JSONDecoder())

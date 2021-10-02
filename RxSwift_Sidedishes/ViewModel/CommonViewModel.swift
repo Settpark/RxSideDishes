@@ -11,9 +11,9 @@ import RxCocoa
 
 class CommonViewModel: NSObject {
     let sceneCoordinator: SceneCoordinatorType
-    let storage: BanchanStorageType
+    let storage: BanchanRepositoryType
     
-    init(sceneCoordinator: SceneCoordinatorType, storage: BanchanStorageType) {
+    init(sceneCoordinator: SceneCoordinatorType, storage: BanchanRepositoryType) {
         self.sceneCoordinator = sceneCoordinator
         self.storage = storage
     }

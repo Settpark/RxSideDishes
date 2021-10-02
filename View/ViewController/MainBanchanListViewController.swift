@@ -107,6 +107,8 @@ extension MainBanchanListViewController {
             .banchanList
             .bind(to: listTableView.rx.items(dataSource: self.listDataSource))
             .disposed(by: rx.disposeBag)
+        
+        listTableView.reloadData()
     }
 }
 

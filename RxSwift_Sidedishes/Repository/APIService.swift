@@ -52,12 +52,12 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         }.resume()
     }
     
-    func fetchDataWithRx(usecase: BanchanUsecase) -> Observable<[BanchanDTO]> {
+    func fetchDataWithRx(usecase: BanchanUsecase) -> Observable<Banchans> {
         return Observable.create { [weak self] emmiter in
             self?.fetchDataWithSession(usecase: usecase) { result in
                 switch result {
                 case .success(let data):
-                    emmiter.onNext(data.body)
+                    emmiter.onNext(data)
                     emmiter.onCompleted()
                 case .failure(let error):
                     emmiter.onError(error)
@@ -66,6 +66,16 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
             return Disposables.create()
         }
     }
+    
+//    func makeBanchan(from banchans: Banchans) -> Observable<[Banchan]> {
+//        var banchans: [Banchan] = []
+//        for ele in banchans {
+//            let fetchImage =
+//            let makedbanchan = Banchan.init(hash: ele.detailHash, image: fetchImage, alt: ele.alt, deliveryType: ele.deliveryType, title: ele.title, description: ele.description, nPrice: ele.nPrice, sPrice: ele.sPrice, badge: ele.badge)
+//            banchans.append(makedbanchan)
+//        }
+//        return banchans
+//    }
     
     func createRequest(url: URL) -> URLRequest {
         var request: URLRequest = URLRequest.init(url: url)
@@ -84,6 +94,21 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
             return Result.success(try decoder.decode(T.self, from: data))
         } catch {
             return Result.failure(error)
+        }
+    }
+    
+    func getfetchedImage(url: String, onComplete: @escaping (Result<UIImage, Error>) -> Void) {
+        if let url = URL(string: url) {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let err = error {
+                    onComplete(.failure(err))
+                }
+                DispatchQueue.main.async {
+                    if let data = data, let image = UIImage(data: data) {
+                        onComplete(.success(image))
+                    }
+                }
+            }.resume()
         }
     }
 }

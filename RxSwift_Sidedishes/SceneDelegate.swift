@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        let stroage = BanchanStorage(apiService: APIService(urlSessionManager: URLSession.shared, apiMaker: APIMaker.init()))
+        let stroage = BanchanRepository(apiService: APIService(urlSessionManager: URLSession.shared, apiMaker: APIMaker.init()))
         let coordinator = SceneCoordinator(window: self.window!)
         let banchanListViewModel = BanchanListViewModel.init(sceneCoordinator: coordinator, storage: stroage)
         let listScene = Scene.MainList(banchanListViewModel)
