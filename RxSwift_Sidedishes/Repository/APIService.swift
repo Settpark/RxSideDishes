@@ -25,57 +25,16 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         self.apiMaker = apiMaker
     }
     
-    func fetchDataWithSession(usecase: BanchanUsecase, onComplete: @escaping (Result<Banchans, Error>) -> Void) {
-        let validURL = apiMaker.createValidURL(path: usecase)
-        
-        let request = self.createRequest(url: validURL)
-        
-        self.urlSessionManager.dataTask(with: request) { [weak self] data, response, error in
-            if let localerr = error {
-                onComplete(.failure(localerr))
-                return
-            }
-            else {
-                guard let validData = data else {
-                    return
-                }
-                let result = self?.decodeData(type: Banchans.self, data: validData)
-                switch result {
-                case .success(let data):
-                    onComplete(.success(data))
-                case .failure(let error):
-                    onComplete(.failure(error))
-                case .none:
-                    break
-                }
-            }
-        }.resume()
+    func fetchDataRx(request: URLRequest) -> Observable<Data> {
+        return URLSession.shared.rx.data(request: request)
     }
     
-    func fetchDataWithRx(usecase: BanchanUsecase) -> Observable<Banchans> {
-        return Observable.create { [weak self] emmiter in
-            self?.fetchDataWithSession(usecase: usecase) { result in
-                switch result {
-                case .success(let data):
-                    emmiter.onNext(data)
-                    emmiter.onCompleted()
-                case .failure(let error):
-                    emmiter.onError(error)
-                }
+    func requestDataWithRx<T: Decodable>(request: URLRequest, type: T.Type) -> Observable<Result<T,Error>> {
+        return fetchDataRx(request: request)
+            .map { [unowned self] data in
+                return self.decodedData(type: type, data: data)
             }
-            return Disposables.create()
-        }
     }
-    
-//    func makeBanchan(from banchans: Banchans) -> Observable<[Banchan]> {
-//        var banchans: [Banchan] = []
-//        for ele in banchans {
-//            let fetchImage =
-//            let makedbanchan = Banchan.init(hash: ele.detailHash, image: fetchImage, alt: ele.alt, deliveryType: ele.deliveryType, title: ele.title, description: ele.description, nPrice: ele.nPrice, sPrice: ele.sPrice, badge: ele.badge)
-//            banchans.append(makedbanchan)
-//        }
-//        return banchans
-//    }
     
     func createRequest(url: URL) -> URLRequest {
         var request: URLRequest = URLRequest.init(url: url)
@@ -87,13 +46,13 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         return request
     }
     
-    func decodeData<T: Decodable>(type: T.Type, data: Data) -> Result<T,Error> {
+    func decodedData<T: Decodable>(type: T.Type, data: Data) -> Result<T,Error> {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         do {
-            return Result.success(try decoder.decode(T.self, from: data))
+            return .success(try decoder.decode(T.self, from: data))
         } catch {
-            return Result.failure(error)
+            return .failure(error)
         }
     }
     

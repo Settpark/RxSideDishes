@@ -11,7 +11,6 @@
 		366561CBDD0AD1AAAE4F47D4 /* Pods_RxSwift_SidedishesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636983C3E57CF4FB1ABD743E /* Pods_RxSwift_SidedishesTests.framework */; };
 		823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57A826AE7EC300A2B80E /* AppDelegate.swift */; };
 		823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */; };
-		823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AC26AE7EC300A2B80E /* MainViewController.swift */; };
 		823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B126AE7EC500A2B80E /* Assets.xcassets */; };
 		824F04ED26DCA6FA00300173 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707826D73F2400139F8F /* main.json */; };
 		824F04EE26DCA6FA00300173 /* soup.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707A26DC90FC00139F8F /* soup.json */; };
@@ -68,7 +67,6 @@
 		823C57A526AE7EC300A2B80E /* RxSwift_Sidedishes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_Sidedishes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823C57A826AE7EC300A2B80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		823C57AC26AE7EC300A2B80E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		823C57B126AE7EC500A2B80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823C57B626AE7EC500A2B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		824F04F026DCA99200300173 /* APIMakerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerStub.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 		829FFA5726B7B367007925DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				823C57AC26AE7EC300A2B80E /* MainViewController.swift */,
 				829FFA5D26B7CC96007925DF /* MainBanchanListViewController.swift */,
 				829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */,
 				82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */,
@@ -510,7 +507,6 @@
 				829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */,
 				829FFA5C26B7C0D5007925DF /* BanchanRepositoryType.swift in Sources */,
 				829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */,
-				823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */,
 				8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */,
 				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
 				829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */,
