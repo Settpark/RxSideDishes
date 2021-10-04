@@ -25,7 +25,7 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         self.apiMaker = apiMaker
     }
     
-    func fetchDataRx(request: URLRequest) -> Observable<Data> {
+    private func fetchDataRx(request: URLRequest) -> Observable<Data> {
         return URLSession.shared.rx.data(request: request)
     }
     

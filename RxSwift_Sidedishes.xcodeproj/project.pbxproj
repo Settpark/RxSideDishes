@@ -166,7 +166,7 @@
 			children = (
 				829DC06126BB8E7700B7AED6 /* Extension */,
 				829FFA5626B7B338007925DF /* Scene */,
-				82ACD9F026B252DF00CEE616 /* Repository */,
+				82ACD9F026B252DF00CEE616 /* Service */,
 				82ACD9EF26B252B300CEE616 /* ViewModel */,
 				82ACD9EA26B2425200CEE616 /* Model */,
 				82ACD9E826B23E4200CEE616 /* App */,
@@ -198,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				829FFA6126B7D4ED007925DF /* TransitionModel.swift */,
-				829FFA5826B7C094007925DF /* BanchanStorage */,
+				829FFA5826B7C094007925DF /* BanchanRepository */,
 				829FFA6326B7D6E5007925DF /* Scene.swift */,
 				829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */,
 				829DC05726B907D300B7AED6 /* SceneCoordinator.swift */,
@@ -217,13 +217,13 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		829FFA5826B7C094007925DF /* BanchanStorage */ = {
+		829FFA5826B7C094007925DF /* BanchanRepository */ = {
 			isa = PBXGroup;
 			children = (
 				829FFA5926B7C0B9007925DF /* BanchanRepository.swift */,
 				829FFA5B26B7C0D5007925DF /* BanchanRepositoryType.swift */,
 			);
-			path = BanchanStorage;
+			path = BanchanRepository;
 			sourceTree = "<group>";
 		};
 		82ACD9E726B23E2400CEE616 /* Asset */ = {
@@ -276,7 +276,7 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		82ACD9F026B252DF00CEE616 /* Repository */ = {
+		82ACD9F026B252DF00CEE616 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
@@ -287,7 +287,7 @@
 				8283235426D4A8DB00B6EA01 /* APIServiceError.swift */,
 				824F04F026DCA99200300173 /* APIMakerStub.swift */,
 			);
-			path = Repository;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		82ADD77726CB70F40045A911 /* RxSwift_SidedishesTests */ = {
