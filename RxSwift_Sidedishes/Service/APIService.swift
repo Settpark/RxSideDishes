@@ -8,32 +8,28 @@
 import Foundation
 import Alamofire
 import RxSwift
-
-enum BanchanUsecase: String, CaseIterable {
-    case main = "main"
-    case soup = "soup"
-    case side = "side"
-}
+import UIKit
 
 class APIService: APIServiceType {  //너는 왜 클래스니? //create Request //decoding //apimaker 가지고 있고
     //apimaker의 함수를 통해서 url.초기화
-    var urlSessionManager: URLSessionProtocol
-    var apiMaker: APIMakerType
+    private let urlSessionManager: URLSessionProtocol
+    private let endPoint: EndpointManager
     
-    init(urlSessionManager: URLSessionProtocol, apiMaker: APIMakerType) {
+    init(urlSessionManager: URLSessionProtocol, endPoint: EndpointManager) {
         self.urlSessionManager = urlSessionManager
-        self.apiMaker = apiMaker
+        self.endPoint = endPoint
     }
     
-    private func fetchDataRx(request: URLRequest) -> Observable<Data> {
+    func requestDataWithRx<T: Decodable>(url: URL, type: T.Type) -> Observable<T> {
+        let request = createRequest(url: url)
         return URLSession.shared.rx.data(request: request)
-    }
-    
-    func requestDataWithRx<T: Decodable>(request: URLRequest, type: T.Type) -> Observable<Result<T,Error>> {
-        return fetchDataRx(request: request)
-            .map { [unowned self] data in
+            .flatMap { [unowned self] data in
                 return self.decodedData(type: type, data: data)
             }
+    }
+    
+    func createVaildURL(string: String) -> URL {
+        return endPoint.createValidURL(path: string)
     }
     
     func createRequest(url: URL) -> URLRequest {
@@ -46,28 +42,23 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         return request
     }
     
-    func decodedData<T: Decodable>(type: T.Type, data: Data) -> Result<T,Error> {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        do {
-            return .success(try decoder.decode(T.self, from: data))
-        } catch {
-            return .failure(error)
+    func decodedData<T: Decodable>(type: T.Type, data: Data) -> Observable<T> {
+        return Observable.create { emitter in
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                try emitter.onNext(decoder.decode(type, from: data))
+            } catch {
+                emitter.onError(APIServiceError.failedDecoding)
+            }
+            return Disposables.create()
         }
     }
     
-    func getfetchedImage(url: String, onComplete: @escaping (Result<UIImage, Error>) -> Void) {
-        if let url = URL(string: url) {
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let err = error {
-                    onComplete(.failure(err))
-                }
-                DispatchQueue.main.async {
-                    if let data = data, let image = UIImage(data: data) {
-                        onComplete(.success(image))
-                    }
-                }
-            }.resume()
-        }
+    func getfetchedImage(url: String) -> Observable<UIImage> {
+        let validURL = endPoint.createValidURL(path: url)
+        let request = self.createRequest(url: validURL)
+        return URLSession.shared.rx.data(request: request)
+            .map { UIImage(data: $0) ?? UIImage() }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol APIMakerType {
-    var path: String { get set }
-    func createValidURL(path: BanchanUsecase) -> URL
+protocol EndpointManager {
+    var defaultPath: String { get set }
+    func createValidURL(path: String) -> URL
 }

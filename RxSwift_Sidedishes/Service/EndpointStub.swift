@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct APIMakerStub: APIMakerType {
-    var path: String
+struct EndpointStub: EndpointManager {
+    var defaultPath: String
     
     init() {
-        self.path = ""
+        self.defaultPath = ""
     }
     
-    func createValidURL(path: BanchanUsecase) -> URL {
-        let url = Bundle.main.url(forResource: path.rawValue, withExtension: "json")
+    func createValidURL(path: String) -> URL {
+        let url = Bundle.main.url(forResource: path, withExtension: "json")
         guard let validURL = url else {
             return URL(string: "")!
         }

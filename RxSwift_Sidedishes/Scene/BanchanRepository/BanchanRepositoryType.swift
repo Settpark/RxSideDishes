@@ -10,7 +10,7 @@ import RxSwift
 
 protocol BanchanRepositoryType {    
     @discardableResult
-    func banchanList(usecase: BanchanUsecase) -> Observable<[Banchan]>
+    func banchanList(path: MainpageUsecase) -> Observable<[Banchan]>
     
     @discardableResult
     func orderBanchan() -> Observable<BanchanDTO>

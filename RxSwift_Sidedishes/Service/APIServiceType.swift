@@ -9,10 +9,10 @@ import Foundation
 import RxSwift
 
 protocol APIServiceType {
-//    func fetchDataWithSession(usecase: BanchanUsecase, onComplete: @escaping (Result<Banchans, Error>) -> Void)
-    func fetchDataRx(request: URLRequest) -> Observable<Data>
+    func requestDataWithRx<T: Decodable>(url: URL, type: T.Type) -> Observable<T>
+    func createVaildURL(string: String) -> URL
     func createRequest(url: URL) -> URLRequest
-    func getfetchedImage(url: String, onComplete: @escaping (Result<UIImage, Error>) -> Void)
+    func getfetchedImage(url: String) -> Observable<UIImage>
 }
 
 protocol URLSessionProtocol {

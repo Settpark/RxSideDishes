@@ -5,10 +5,9 @@
 //  Created by 박정하 on 2021/09/30.
 //
 
-import Foundation
 import UIKit
 
-struct Banchan: Equatable, BanchanManagble {
+struct Banchan: Equatable {
     
     var detailHash: String
     var image: UIImage
@@ -34,9 +33,9 @@ struct Banchan: Equatable, BanchanManagble {
         badge = []
     }
     
-    init(hash: String, image: UIImage, alt: String, deliveryType: [String], title: String, description: String, nPrice: String?, sPrice: String, badge: [String]?) {
+    init(hash: String, image: UIImage?, alt: String, deliveryType: [String], title: String, description: String, nPrice: String?, sPrice: String, badge: [String]?) {
         self.detailHash = hash
-        self.image = image
+        self.image = image ?? UIImage()
         self.alt = alt
         self.deliveryType = deliveryType
         self.title = title

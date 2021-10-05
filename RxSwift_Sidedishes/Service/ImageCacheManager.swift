@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ImageCacheManager {
     
@@ -17,23 +18,16 @@ class ImageCacheManager {
         self.apiservice = apiservice
     }
     
-    func getCachedImage(url: String, onComplete: @escaping (Result<UIImage, Error>) -> Void) {
+    func getCachedImage(url: String) -> Observable<UIImage> {
         let cacheKey = NSString(string: url)
-        var resultImage = UIImage(systemName: "arrow.uturn.up")!
         
         if let cachedImage = cacheManager.object(forKey: cacheKey) {
-            onComplete(.success(cachedImage))
+            return Observable<UIImage>.just(cachedImage)
         }
         else {
-            self.apiservice.getfetchedImage(url: url) { result in
-                switch result {
-                case .success(let image):
-                    self.cacheManager.setObject(resultImage, forKey: cacheKey)
-                    onComplete(.success(image))
-                case .failure(_):
-                    resultImage = UIImage(systemName: "trash") ?? UIImage()
-                }
-            }
+            return self.apiservice.getfetchedImage(url: url)
+                .do { self.cacheManager.setObject($0, forKey: cacheKey)}
+                .map { $0 }
         }
     }
     

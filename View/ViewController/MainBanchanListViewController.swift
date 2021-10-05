@@ -59,7 +59,7 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
 
 extension MainBanchanListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewModel = BanChanDetailViewModel(sceneCoordinator: self.viewModel.sceneCoordinator, storage: self.viewModel.storage)
+        let detailViewModel = BanChanDetailViewModel(sceneCoordinator: self.viewModel.sceneCoordinator, useCase: self.viewModel.useCase)
         self.viewModel.sceneCoordinator.transition(to: .Detail(detailViewModel), using: .push, animated: true)
     }
     

@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		0C6BE6B2105B8A1BB4A88701 /* Pods_RxSwift_Sidedishes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49095733A82460625278F8D2 /* Pods_RxSwift_Sidedishes.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		366561CBDD0AD1AAAE4F47D4 /* Pods_RxSwift_SidedishesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636983C3E57CF4FB1ABD743E /* Pods_RxSwift_SidedishesTests.framework */; };
+		822EB18A270C208800280796 /* CommonUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EB189270C208800280796 /* CommonUsecase.swift */; };
 		823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57A826AE7EC300A2B80E /* AppDelegate.swift */; };
 		823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */; };
 		823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B126AE7EC500A2B80E /* Assets.xcassets */; };
 		824F04ED26DCA6FA00300173 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707826D73F2400139F8F /* main.json */; };
 		824F04EE26DCA6FA00300173 /* soup.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707A26DC90FC00139F8F /* soup.json */; };
 		824F04EF26DCA6FA00300173 /* side.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707C26DC912B00139F8F /* side.json */; };
-		824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F04F026DCA99200300173 /* APIMakerStub.swift */; };
+		824F04F126DCA99200300173 /* EndpointStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F04F026DCA99200300173 /* EndpointStub.swift */; };
 		8264CF45270744520092688E /* BanchanManagble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8264CF44270744520092688E /* BanchanManagble.swift */; };
 		826F707926D73F2400139F8F /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707826D73F2400139F8F /* main.json */; };
 		826F707B26DC90FC00139F8F /* soup.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707A26DC90FC00139F8F /* soup.json */; };
@@ -37,10 +38,11 @@
 		829FFA6026B7D26B007925DF /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */; };
 		829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA6126B7D4ED007925DF /* TransitionModel.swift */; };
 		829FFA6426B7D6E5007925DF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA6326B7D6E5007925DF /* Scene.swift */; };
+		82A5252E270BBE6300256402 /* BanchanMainpageUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5252D270BBE6300256402 /* BanchanMainpageUsecase.swift */; };
 		82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */; };
 		82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */; };
-		82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387A26C64D8B00A917E5 /* APIMaker.swift */; };
-		82AB387D26C64D9600A917E5 /* APIMakerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387C26C64D9600A917E5 /* APIMakerType.swift */; };
+		82AB387B26C64D8B00A917E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387A26C64D8B00A917E5 /* Endpoint.swift */; };
+		82AB387D26C64D9600A917E5 /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387C26C64D9600A917E5 /* EndpointManager.swift */; };
 		82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */; };
 		82ACD9F226B252F300CEE616 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F126B252F300CEE616 /* APIService.swift */; };
 		82ACD9F426B2545F00CEE616 /* BanchanDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */; };
@@ -64,12 +66,13 @@
 		07192569E3370EC066C0EAF2 /* Pods-RxSwift_SidedishesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_SidedishesTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwift_SidedishesTests/Pods-RxSwift_SidedishesTests.release.xcconfig"; sourceTree = "<group>"; };
 		49095733A82460625278F8D2 /* Pods_RxSwift_Sidedishes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Sidedishes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636983C3E57CF4FB1ABD743E /* Pods_RxSwift_SidedishesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_SidedishesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		822EB189270C208800280796 /* CommonUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUsecase.swift; sourceTree = "<group>"; };
 		823C57A526AE7EC300A2B80E /* RxSwift_Sidedishes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_Sidedishes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823C57A826AE7EC300A2B80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		823C57B126AE7EC500A2B80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823C57B626AE7EC500A2B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		824F04F026DCA99200300173 /* APIMakerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerStub.swift; sourceTree = "<group>"; };
+		824F04F026DCA99200300173 /* EndpointStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointStub.swift; sourceTree = "<group>"; };
 		8264CF44270744520092688E /* BanchanManagble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanManagble.swift; sourceTree = "<group>"; };
 		826F707826D73F2400139F8F /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		826F707A26DC90FC00139F8F /* soup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = soup.json; sourceTree = "<group>"; };
@@ -92,10 +95,11 @@
 		829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableType.swift; sourceTree = "<group>"; };
 		829FFA6126B7D4ED007925DF /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		829FFA6326B7D6E5007925DF /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		82A5252D270BBE6300256402 /* BanchanMainpageUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanMainpageUsecase.swift; sourceTree = "<group>"; };
 		82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanDetailViewModel.swift; sourceTree = "<group>"; };
 		82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBanchanViewController.swift; sourceTree = "<group>"; };
-		82AB387A26C64D8B00A917E5 /* APIMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMaker.swift; sourceTree = "<group>"; };
-		82AB387C26C64D9600A917E5 /* APIMakerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerType.swift; sourceTree = "<group>"; };
+		82AB387A26C64D8B00A917E5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		82AB387C26C64D9600A917E5 /* EndpointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
 		82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanListViewModel.swift; sourceTree = "<group>"; };
 		82ACD9F126B252F300CEE616 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDTO.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */ = {
 			isa = PBXGroup;
 			children = (
+				82A5252C270BBE4C00256402 /* UseCase */,
 				829DC06126BB8E7700B7AED6 /* Extension */,
 				829FFA5626B7B338007925DF /* Scene */,
 				82ACD9F026B252DF00CEE616 /* Service */,
@@ -226,6 +231,15 @@
 			path = BanchanRepository;
 			sourceTree = "<group>";
 		};
+		82A5252C270BBE4C00256402 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				82A5252D270BBE6300256402 /* BanchanMainpageUsecase.swift */,
+				822EB189270C208800280796 /* CommonUsecase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		82ACD9E726B23E2400CEE616 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,10 +296,10 @@
 				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
 				82ACD9F126B252F300CEE616 /* APIService.swift */,
 				829DC05B26BA692400B7AED6 /* APIServiceType.swift */,
-				82AB387A26C64D8B00A917E5 /* APIMaker.swift */,
-				82AB387C26C64D9600A917E5 /* APIMakerType.swift */,
+				82AB387A26C64D8B00A917E5 /* Endpoint.swift */,
+				82AB387C26C64D9600A917E5 /* EndpointManager.swift */,
 				8283235426D4A8DB00B6EA01 /* APIServiceError.swift */,
-				824F04F026DCA99200300173 /* APIMakerStub.swift */,
+				824F04F026DCA99200300173 /* EndpointStub.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -501,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822EB18A270C208800280796 /* CommonUsecase.swift in Sources */,
 				8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */,
 				829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */,
 				829DC05E26BB83F900B7AED6 /* MainViewBanchanCell.swift in Sources */,
@@ -509,14 +524,15 @@
 				829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */,
 				8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */,
 				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
+				82A5252E270BBE6300256402 /* BanchanMainpageUsecase.swift in Sources */,
 				829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */,
 				829FFA6426B7D6E5007925DF /* Scene.swift in Sources */,
 				82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */,
 				829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */,
-				82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */,
+				82AB387B26C64D8B00A917E5 /* Endpoint.swift in Sources */,
 				829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */,
 				82ACD9F426B2545F00CEE616 /* BanchanDTO.swift in Sources */,
-				824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */,
+				824F04F126DCA99200300173 /* EndpointStub.swift in Sources */,
 				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
 				8264CF45270744520092688E /* BanchanManagble.swift in Sources */,
 				82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */,
@@ -529,7 +545,7 @@
 				823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */,
 				829FFA5E26B7CC96007925DF /* MainBanchanListViewController.swift in Sources */,
 				82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */,
-				82AB387D26C64D9600A917E5 /* APIMakerType.swift in Sources */,
+				82AB387D26C64D9600A917E5 /* EndpointManager.swift in Sources */,
 				829FFA5A26B7C0B9007925DF /* BanchanRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
