@@ -50,7 +50,7 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
     }
     
     func showAlertController(error: Error) {
-        let alertController = UIAlertController.init(title: APIServiceError.failedDecoding.rawValue, message: error.localizedDescription, preferredStyle: .alert)
+        let alertController = UIAlertController.init(title: error.localizedDescription, message: error.localizedDescription, preferredStyle: .alert)
         let alertaction = UIAlertAction.init(title: ButtonTitle.확인.rawValue, style: .destructive, handler: nil)
         alertController.addAction(alertaction)
         self.present(alertController, animated: true, completion: nil)

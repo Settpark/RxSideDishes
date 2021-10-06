@@ -29,15 +29,13 @@ class BanchanRepository: BanchanRepositoryType {
     }
     
     func toEntity(DTO: [BanchanDTO]) -> Observable<[Banchan]> {
-        let temp = DTO.map{ (DTO: Observable<BanchanDTO>.just($0), image: imageManager.getCachedImage(url: $0.imageURL)) }
+        let temp = DTO.map {(DTO: Observable<BanchanDTO>.just($0), image: imageManager.getCachedImage(url: $0.image))}
         return Observable.from(temp)
             .flatMap {
                 Observable.combineLatest($0, $1) { dto, image -> Banchan in
                     return Banchan.init(hash: dto.detailHash, image: image, alt: dto.alt, deliveryType: dto.deliveryType, title: dto.title, description: dto.description, nPrice: dto.nPrice, sPrice: dto.sPrice, badge: dto.badge)
-                }.buffer(timeSpan: .never, count: DTO.count, scheduler: MainScheduler.instance)
-            }
-//                    Banchan.init(hash: data.detailHash, image: image, alt: data.alt, deliveryType: data.deliveryType, title: data.title, description: data.description, nPrice: data.nPrice, sPrice: data.sPrice, badge: data.badge)
-//                }.buffer(timeSpan: .never, count: DTO.count, scheduler: MainScheduler.instance)
+                }
+            }.buffer(timeSpan: .never, count: 0, scheduler: MainScheduler.instance)
     }
     
     @discardableResult

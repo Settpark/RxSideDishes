@@ -10,7 +10,7 @@ import Foundation
 struct BanchanDTO: Decodable, Equatable {
     
     let detailHash: String
-    let imageURL: String
+    let image: String
     let alt: String
     let deliveryType: [String]
     let title: String
@@ -23,7 +23,7 @@ struct BanchanDTO: Decodable, Equatable {
     
     init() {
         detailHash = ""
-        imageURL = ""
+        image = ""
         alt = ""
         deliveryType = []
         title = "빈 더미 더미"

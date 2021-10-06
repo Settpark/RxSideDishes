@@ -12,8 +12,10 @@ struct EndPoint: EndpointManager {
     
     func createValidURL(path: String) -> URL {
         let newPath = self.defaultPath + path
+        
         guard let baseURL = URLComponents(string: "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com") else {
             return URL(string: "")!
+            
         }
         var urlComponents = URLComponents.init()
         urlComponents = baseURL

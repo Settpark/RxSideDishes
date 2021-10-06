@@ -23,8 +23,8 @@ struct BanchanMainpageUsecase: CommonUsecase {
 
 
 enum MainpageUsecase: String, CaseIterable {
-    case main
-    case soup
-    case side
+    case main = "main"
+    case soup = "soup"
+    case side = "side"
     case none
 }

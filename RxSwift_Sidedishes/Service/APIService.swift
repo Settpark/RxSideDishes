@@ -24,6 +24,7 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         let request = createRequest(url: url)
         return URLSession.shared.rx.data(request: request)
             .flatMap { [unowned self] data in
+                
                 return self.decodedData(type: type, data: data)
             }
     }
@@ -47,7 +48,8 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                try emitter.onNext(decoder.decode(type, from: data))
+                let local = try decoder.decode(type, from: data)
+                emitter.onNext(local)
             } catch {
                 emitter.onError(APIServiceError.failedDecoding)
             }
@@ -56,7 +58,7 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
     }
     
     func getfetchedImage(url: String) -> Observable<UIImage> {
-        let validURL = endPoint.createValidURL(path: url)
+        let validURL = URL(string: url)!
         let request = self.createRequest(url: validURL)
         return URLSession.shared.rx.data(request: request)
             .map { UIImage(data: $0) ?? UIImage() }
