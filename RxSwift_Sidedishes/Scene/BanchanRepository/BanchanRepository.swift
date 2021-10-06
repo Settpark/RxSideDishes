@@ -29,7 +29,7 @@ class BanchanRepository: BanchanRepositoryType {
     }
     
     func toEntity(DTO: [BanchanDTO]) -> Observable<[Banchan]> {
-        let temp = DTO.map {(DTO: Observable<BanchanDTO>.just($0), image: imageManager.getCachedImage(url: $0.image))}
+        let temp = DTO.map {(DTO: Observable<BanchanDTO>.just($0), image: imageManager.getDiskCachedImage(url: $0.image))}
         return Observable.from(temp)
             .flatMap {
                 Observable.combineLatest($0, $1) { dto, image -> Banchan in

@@ -10,6 +10,7 @@ import RxSwift
 
 class ImageCacheManager {
     
+    private let diskCacheManager = FileManager.default
     let cacheManager: NSCache<NSString, UIImage>
     let apiservice: APIServiceType
     
@@ -31,5 +32,37 @@ class ImageCacheManager {
         }
     }
     
+    func getDiskCachedImage(url: String) -> Observable<UIImage> {
+        let cachedDirectory = diskCacheManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        let dataPath = cachedDirectory.appendingPathComponent("DiskCache")
+        let strPath = dataPath.appendingPathComponent(url.split(separator: "/").last!.description)
+        makeDirectory(url: dataPath)
+        if diskCacheManager.fileExists(atPath: strPath.path) {
+            do {
+                let data = try Data(contentsOf: strPath)
+                let image = UIImage(data: data) ?? UIImage()
+                return Observable<UIImage>.just(image)
+            } catch let error {
+                print("unknown image Error: \(error.localizedDescription)")
+                return Observable<UIImage>.just(UIImage())
+            }
+        } else {
+            return self.apiservice.getfetchedImage(url: url)
+                .do { self.diskCacheManager.createFile(atPath: strPath.path, contents: $0.pngData() , attributes: nil); print("저장함")}
+                .map { $0 }
+        }
+    }
+    
+    func makeDirectory(url: URL) {
+        if !diskCacheManager.fileExists(atPath: url.path) {
+            do {
+                print("경로를 생성합니다")
+                // 디렉토리 생성
+                try diskCacheManager.createDirectory(atPath: url.path, withIntermediateDirectories: false, attributes: nil)
+            } catch let error {
+                print("Error creating directory: \(error.localizedDescription)")
+            }
+        }
+    }
     
 }

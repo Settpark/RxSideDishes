@@ -19,7 +19,7 @@ class MainViewBanchanCell: UITableViewCell {
     private var stackviewForBadge: UIStackView
     private var stackviewForPrice: UIStackView
     private var stackviewForDeliveryType: UIStackView
-        
+    
     private var banchanimage: UIImageView
     private var title: UILabel
     private var banchanDescription: UILabel
@@ -32,19 +32,19 @@ class MainViewBanchanCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.cellContainView = UIStackView()
-        cellContainView.axis = .vertical
+        self.cellContainView.axis = .vertical
         self.cellContainView.distribution = .fillEqually
         self.cellContainView.alignment = .leading
         self.stackviewForPrice = UIStackView()
-        stackviewForPrice.axis = .horizontal
-        stackviewForPrice.distribution = .fillEqually
-        stackviewForPrice.alignment = .leading
+        self.stackviewForPrice.axis = .horizontal
+        self.stackviewForPrice.distribution = .fillEqually
+        self.stackviewForPrice.alignment = .leading
         self.stackviewForBadge = UIStackView()
-        stackviewForBadge.axis = .horizontal
-        stackviewForBadge.contentMode = .left
+        self.stackviewForBadge.axis = .horizontal
+        self.stackviewForBadge.contentMode = .left
         self.stackviewForDeliveryType = UIStackView()
-        stackviewForDeliveryType.axis = .horizontal
-        stackviewForDeliveryType.contentMode = .left
+        self.stackviewForDeliveryType.axis = .horizontal
+        self.stackviewForDeliveryType.contentMode = .left
         
         self.banchanimage = UIImageView()
         self.title = UILabel()
@@ -125,20 +125,21 @@ class MainViewBanchanCell: UITableViewCell {
         self.stackviewForPrice.addArrangedSubview(sPrice)
         self.stackviewForPrice.addArrangedSubview(nPrice)
         
-        self.cellContainView.addArrangedSubview(self.stackviewForBadge)
-        self.cellContainView.snp.makeConstraints { make in
-            make.left.equalTo(cellContainView.snp.left)
-        }
-        
-        self.badge.forEach { label in
-            self.stackviewForBadge.addArrangedSubview(label)
+        if badge.count != 0 || badge == nil {
+            self.cellContainView.addArrangedSubview(self.stackviewForBadge)
+            self.cellContainView.snp.makeConstraints { make in
+                make.left.equalTo(cellContainView.snp.left)
+            }
+            
+            self.badge.forEach { label in
+                self.stackviewForBadge.addArrangedSubview(label)
+            }
         }
         
         self.cellContainView.addArrangedSubview(self.stackviewForDeliveryType)
         self.stackviewForDeliveryType.snp.makeConstraints { make in
             make.left.equalTo(self.cellContainView.snp.left)
         }
-        
         self.deliveryType.forEach { label in
             self.stackviewForDeliveryType.addArrangedSubview(label)
         }
