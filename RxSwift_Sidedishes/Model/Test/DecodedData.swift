@@ -14,17 +14,17 @@ class DecodedData {
         self.decoder = decoder
     }
     
-    func testData() -> [BanchanSection] {
-        var result: [BanchanSection] = []
-        for index in BanchanUsecase.allCases {
-            let path = Bundle.main.url(forResource: index.rawValue, withExtension: "json")
-            let data = try! Data.init(contentsOf: path!)
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let decodedData = try! decoder.decode(Banchans.self, from: data)
-            let sectionData = BanchanSection.init(sectionitem: index, items: decodedData.body)
-            result.append(sectionData)
-        }
-        let copysection = [result[1], result[0], result[2]]
-        return copysection
-    }
+//    func testData() -> [BanchanSection] {
+//        var result: [BanchanSection] = []
+//        for index in BanchanMainpageUsecase.allCases {
+//            let path = Bundle.main.url(forResource: index.rawValue, withExtension: "json")
+//            let data = try! Data.init(contentsOf: path!)
+//            decoder.keyDecodingStrategy = .convertFromSnakeCase
+//            let decodedData = try! decoder.decode(Banchans.self, from: data)
+//            let sectionData = BanchanSection.init(sectionitem: index, items: decodedData.body)
+//            result.append(sectionData)
+//        }
+//        let copysection = [result[1], result[0], result[2]]
+//        return copysection
+//    }
 }

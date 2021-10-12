@@ -7,13 +7,15 @@
 
 import Foundation
 
-struct APIMaker: APIMakerType {
-    var path: String = "/develop/baminchan/"
+struct EndPoint: EndpointManager {
+    var defaultPath: String = "/develop/baminchan/"
     
-    func createValidURL(path: BanchanUsecase) -> URL {
-        let newPath = self.path + path.rawValue
+    func createValidURL(path: String) -> URL {
+        let newPath = self.defaultPath + path
+        
         guard let baseURL = URLComponents(string: "https://h3rb9c0ugl.execute-api.ap-northeast-2.amazonaws.com") else {
-            return URL(string: "")! //여기를 어떻게 못하나..?
+            return URL(string: "")!
+            
         }
         var urlComponents = URLComponents.init()
         urlComponents = baseURL

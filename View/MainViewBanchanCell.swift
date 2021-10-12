@@ -19,8 +19,8 @@ class MainViewBanchanCell: UITableViewCell {
     private var stackviewForBadge: UIStackView
     private var stackviewForPrice: UIStackView
     private var stackviewForDeliveryType: UIStackView
-        
-    private var image: UIImageView
+    
+    private var banchanimage: UIImageView
     private var title: UILabel
     private var banchanDescription: UILabel
     private var sPrice: UILabel
@@ -32,21 +32,21 @@ class MainViewBanchanCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.cellContainView = UIStackView()
-        cellContainView.axis = .vertical
-        self.cellContainView.distribution = .equalSpacing
+        self.cellContainView.axis = .vertical
+        self.cellContainView.distribution = .fillEqually
         self.cellContainView.alignment = .leading
         self.stackviewForPrice = UIStackView()
-        stackviewForPrice.axis = .horizontal
-        stackviewForPrice.distribution = .fillEqually
-        stackviewForPrice.alignment = .leading
+        self.stackviewForPrice.axis = .horizontal
+        self.stackviewForPrice.distribution = .fillEqually
+        self.stackviewForPrice.alignment = .leading
         self.stackviewForBadge = UIStackView()
-        stackviewForBadge.axis = .horizontal
-        stackviewForBadge.contentMode = .left
+        self.stackviewForBadge.axis = .horizontal
+        self.stackviewForBadge.contentMode = .left
         self.stackviewForDeliveryType = UIStackView()
-        stackviewForDeliveryType.axis = .horizontal
-        stackviewForDeliveryType.contentMode = .left
+        self.stackviewForDeliveryType.axis = .horizontal
+        self.stackviewForDeliveryType.contentMode = .left
         
-        self.image = UIImageView()
+        self.banchanimage = UIImageView()
         self.title = UILabel()
         self.banchanDescription = UILabel()
         self.sPrice = UILabel()
@@ -58,6 +58,7 @@ class MainViewBanchanCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.banchanimage.image = nil
         self.title.text = nil
         self.banchanDescription.text = nil
         self.sPrice.text = nil
@@ -84,7 +85,7 @@ class MainViewBanchanCell: UITableViewCell {
     }
     
     func setContents(value: Banchan) {
-        self.image.setImageUrl(value.image)
+        self.banchanimage.image = value.image
         self.title.text = value.title
         self.banchanDescription.text = value.description
         self.sPrice.text = value.sPrice
@@ -94,36 +95,22 @@ class MainViewBanchanCell: UITableViewCell {
     }
     
     func setConstraintsCellContents() {
-//        self.translatesAutoresizingMaskIntoConstraints = false //여기까지 내가 컨트롤 하고 싶은데 튀어버림
-//        self.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//        self.widthAnchor.constraint(equalToConstant: 500).isActive = true
         
-        self.addSubview(self.image)
-        self.image.snp.makeConstraints() { make in
+        self.addSubview(self.banchanimage)
+        self.banchanimage.snp.makeConstraints() { make in
             make.width.height.equalTo(100)
-            make.left.equalTo(self.snp.left).offset(10)
+            make.left.equalTo(self.snp.left).offset(5)
             make.centerY.equalTo(self.snp.centerY)
         }
         
-//        self.image.translatesAutoresizingMaskIntoConstraints = false
-//        self.image.widthAnchor.constraint(equalToConstant: 100).isActive = true
-//        self.image.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//        self.image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
-//        self.image.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        
         self.addSubview(self.cellContainView)
         self.cellContainView.snp.makeConstraints { make in
-            make.left.equalTo(self.image.snp.right).offset(1)
+            make.left.equalTo(self.banchanimage.snp.right).offset(5)
+            make.height.equalTo(self)
         }
         
-//        self.cellContainView.frame.size = CGSize(width: self.frame.width - self.image.frame.width - 1, height: self.frame.height - 1)
-//        self.cellContainView.translatesAutoresizingMaskIntoConstraints = false
-//        self.cellContainView.topAnchor.constraint(equalTo: self.topAnchor, constant: 1).isActive = true
-//        self.cellContainView.leadingAnchor.constraint(equalTo: self.image.trailingAnchor, constant: 1).isActive = true
-//        self.cellContainView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
         self.cellContainView.addArrangedSubview(self.title)
-        self.title.font = .systemFont(ofSize: 15)
+        self.title.font = .boldSystemFont(ofSize: 15)
         self.title.sizeToFit()
         
         self.cellContainView.addArrangedSubview(self.banchanDescription)
@@ -134,30 +121,25 @@ class MainViewBanchanCell: UITableViewCell {
         self.stackviewForPrice.snp.makeConstraints { make in
             make.left.equalTo(cellContainView.snp.left)
         }
-//        self.stackviewForPrice.translatesAutoresizingMaskIntoConstraints = false
-//        self.stackviewForPrice.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
         
         self.stackviewForPrice.addArrangedSubview(sPrice)
         self.stackviewForPrice.addArrangedSubview(nPrice)
         
-        self.cellContainView.addArrangedSubview(self.stackviewForBadge)
-        self.cellContainView.snp.makeConstraints { make in
-            make.left.equalTo(cellContainView.snp.left)
-        }
-//        self.stackviewForBadge.translatesAutoresizingMaskIntoConstraints = false
-//        self.stackviewForBadge.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
-        
-        self.badge.forEach { label in
-            self.stackviewForBadge.addArrangedSubview(label)
+        if badge.count != 0 || badge == nil {
+            self.cellContainView.addArrangedSubview(self.stackviewForBadge)
+            self.cellContainView.snp.makeConstraints { make in
+                make.left.equalTo(cellContainView.snp.left)
+            }
+            
+            self.badge.forEach { label in
+                self.stackviewForBadge.addArrangedSubview(label)
+            }
         }
         
         self.cellContainView.addArrangedSubview(self.stackviewForDeliveryType)
         self.stackviewForDeliveryType.snp.makeConstraints { make in
             make.left.equalTo(self.cellContainView.snp.left)
         }
-//        self.stackviewForDeliveryType.translatesAutoresizingMaskIntoConstraints = false
-//        self.stackviewForDeliveryType.leadingAnchor.constraint(equalTo: self.cellContainView.leadingAnchor).isActive = true
-        
         self.deliveryType.forEach { label in
             self.stackviewForDeliveryType.addArrangedSubview(label)
         }

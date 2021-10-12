@@ -52,15 +52,15 @@ class RxSwift_SidedishesTests: XCTestCase {
         service.fetchDataWithSession(usecase: .main, onComplete: { _ in })
         //then
         let request = sessionManager.request
-        let testURL = APIMaker().createValidURL(path: .main)
+        let testURL = EndPoint().createValidURL(path: )
         XCTAssertEqual(request, service.createRequest(url: testURL))
     }
     
     func test뷰_모델의_로직은_올바른가() {
         //given
-        let apiService = APIService.init(urlSessionManager: URLSession.shared, apiMaker: APIMakerStub.init())
+        let apiService = APIService.init(urlSessionManager: URLSession.shared, apiMaker: EndpointStub.init())
         let coordinator = SceneCoordinator.init(window: UIWindow.init())
-        let repo = BanchanStorage.init(apiService: apiService)
+        let repo = BanchanRepository.init(apiService: apiService)
         let viewModel = BanchanListViewModel.init(sceneCoordinator: coordinator, storage: repo)
         
         let decodedData = DecodedData.init(decoder: JSONDecoder())

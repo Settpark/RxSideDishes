@@ -11,11 +11,12 @@ import RxCocoa
 
 class CommonViewModel: NSObject {
     let sceneCoordinator: SceneCoordinatorType
-    let storage: BanchanStorageType
+    var delegate: AlertController?
+    let useCase: CommonUsecase
     
-    init(sceneCoordinator: SceneCoordinatorType, storage: BanchanStorageType) {
+    init(sceneCoordinator: SceneCoordinatorType, useCase: CommonUsecase) {
         self.sceneCoordinator = sceneCoordinator
-        self.storage = storage
+        self.useCase = useCase
+        self.delegate = nil
     }
-    
 }

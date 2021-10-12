@@ -14,26 +14,26 @@ struct BanchanSection: SectionModelType, Equatable {
         return lhs.sectionitem == rhs.sectionitem && lhs.items == rhs.items
     }
     
-    var sectionitem: BanchanUsecase
+    var sectionitem: MainpageUsecase
     var items: [Banchan]
     
-    init(sectionitem: BanchanUsecase, items: [Banchan]) {
+    init(sectionitem: MainpageUsecase, items: [Banchan]) {
         self.sectionitem = sectionitem
         self.items = items
     }
     
-    static func getSectionType(_ rowValue: Int) -> BanchanUsecase {
-        var type: BanchanUsecase!
+    static func getSectionType(_ rowValue: Int) -> MainpageUsecase {
+        var type: MainpageUsecase!
         
         switch rowValue {
         case 0:
-            type = BanchanUsecase.main
+            type = MainpageUsecase.main
             break
         case 1:
-            type = BanchanUsecase.soup
+            type = MainpageUsecase.soup
             break
         case 2:
-            type = BanchanUsecase.side
+            type = MainpageUsecase.side
             break
         default:
             break

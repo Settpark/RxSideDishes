@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		0C6BE6B2105B8A1BB4A88701 /* Pods_RxSwift_Sidedishes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49095733A82460625278F8D2 /* Pods_RxSwift_Sidedishes.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		366561CBDD0AD1AAAE4F47D4 /* Pods_RxSwift_SidedishesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636983C3E57CF4FB1ABD743E /* Pods_RxSwift_SidedishesTests.framework */; };
+		822EB18A270C208800280796 /* CommonUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822EB189270C208800280796 /* CommonUsecase.swift */; };
 		823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57A826AE7EC300A2B80E /* AppDelegate.swift */; };
 		823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */; };
-		823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823C57AC26AE7EC300A2B80E /* MainViewController.swift */; };
 		823C57B226AE7EC500A2B80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823C57B126AE7EC500A2B80E /* Assets.xcassets */; };
 		824F04ED26DCA6FA00300173 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707826D73F2400139F8F /* main.json */; };
 		824F04EE26DCA6FA00300173 /* soup.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707A26DC90FC00139F8F /* soup.json */; };
 		824F04EF26DCA6FA00300173 /* side.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707C26DC912B00139F8F /* side.json */; };
-		824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F04F026DCA99200300173 /* APIMakerStub.swift */; };
+		824F04F126DCA99200300173 /* EndpointStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824F04F026DCA99200300173 /* EndpointStub.swift */; };
+		8264CF45270744520092688E /* BanchanManagble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8264CF44270744520092688E /* BanchanManagble.swift */; };
 		826F707926D73F2400139F8F /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707826D73F2400139F8F /* main.json */; };
 		826F707B26DC90FC00139F8F /* soup.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707A26DC90FC00139F8F /* soup.json */; };
 		826F707D26DC912B00139F8F /* side.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F707C26DC912B00139F8F /* side.json */; };
 		8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235426D4A8DB00B6EA01 /* APIServiceError.swift */; };
 		8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283235726D4BE5D00B6EA01 /* AlertController.swift */; };
+		829CEE9B2705F9F500C8B4AA /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CEE9A2705F9F500C8B4AA /* Banchan.swift */; };
 		829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */; };
 		829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05726B907D300B7AED6 /* SceneCoordinator.swift */; };
 		829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05926B9121800B7AED6 /* CommonViewModel.swift */; };
@@ -30,19 +32,20 @@
 		829DC06026BB8E6B00B7AED6 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC05F26BB8E6B00B7AED6 /* Extension+UILabel.swift */; };
 		829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC06226BB9B4400B7AED6 /* BanchanSection.swift */; };
 		829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829E56EA26B2738D0099C3A0 /* Banchans.swift */; };
-		829FFA5A26B7C0B9007925DF /* BanchanStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5926B7C0B9007925DF /* BanchanStorage.swift */; };
-		829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */; };
+		829FFA5A26B7C0B9007925DF /* BanchanRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5926B7C0B9007925DF /* BanchanRepository.swift */; };
+		829FFA5C26B7C0D5007925DF /* BanchanRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5B26B7C0D5007925DF /* BanchanRepositoryType.swift */; };
 		829FFA5E26B7CC96007925DF /* MainBanchanListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5D26B7CC96007925DF /* MainBanchanListViewController.swift */; };
 		829FFA6026B7D26B007925DF /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */; };
 		829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA6126B7D4ED007925DF /* TransitionModel.swift */; };
 		829FFA6426B7D6E5007925DF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FFA6326B7D6E5007925DF /* Scene.swift */; };
+		82A5252E270BBE6300256402 /* BanchanMainpageUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A5252D270BBE6300256402 /* BanchanMainpageUsecase.swift */; };
 		82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */; };
 		82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */; };
-		82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387A26C64D8B00A917E5 /* APIMaker.swift */; };
-		82AB387D26C64D9600A917E5 /* APIMakerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387C26C64D9600A917E5 /* APIMakerType.swift */; };
+		82AB387B26C64D8B00A917E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387A26C64D8B00A917E5 /* Endpoint.swift */; };
+		82AB387D26C64D9600A917E5 /* EndpointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AB387C26C64D9600A917E5 /* EndpointManager.swift */; };
 		82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */; };
 		82ACD9F226B252F300CEE616 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F126B252F300CEE616 /* APIService.swift */; };
-		82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* Banchan.swift */; };
+		82ACD9F426B2545F00CEE616 /* BanchanDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */; };
 		82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AD88CD26DCC3880082F165 /* DecodedData.swift */; };
 		82ADD77926CB70F40045A911 /* RxSwift_SidedishesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */; };
 		82C6625F270305C900631D05 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6625E270305C900631D05 /* ImageCacheManager.swift */; };
@@ -63,19 +66,21 @@
 		07192569E3370EC066C0EAF2 /* Pods-RxSwift_SidedishesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_SidedishesTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwift_SidedishesTests/Pods-RxSwift_SidedishesTests.release.xcconfig"; sourceTree = "<group>"; };
 		49095733A82460625278F8D2 /* Pods_RxSwift_Sidedishes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Sidedishes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		636983C3E57CF4FB1ABD743E /* Pods_RxSwift_SidedishesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_SidedishesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		822EB189270C208800280796 /* CommonUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUsecase.swift; sourceTree = "<group>"; };
 		823C57A526AE7EC300A2B80E /* RxSwift_Sidedishes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_Sidedishes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823C57A826AE7EC300A2B80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		823C57AA26AE7EC300A2B80E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		823C57AC26AE7EC300A2B80E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		823C57B126AE7EC500A2B80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		823C57B626AE7EC500A2B80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		824F04F026DCA99200300173 /* APIMakerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerStub.swift; sourceTree = "<group>"; };
+		824F04F026DCA99200300173 /* EndpointStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointStub.swift; sourceTree = "<group>"; };
+		8264CF44270744520092688E /* BanchanManagble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanManagble.swift; sourceTree = "<group>"; };
 		826F707826D73F2400139F8F /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		826F707A26DC90FC00139F8F /* soup.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = soup.json; sourceTree = "<group>"; };
 		826F707C26DC912B00139F8F /* side.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = side.json; sourceTree = "<group>"; };
 		8283235426D4A8DB00B6EA01 /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		8283235726D4BE5D00B6EA01 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		8283235926D4E09200B6EA01 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		829CEE9A2705F9F500C8B4AA /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
 		829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		829DC05726B907D300B7AED6 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		829DC05926B9121800B7AED6 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
@@ -84,19 +89,20 @@
 		829DC05F26BB8E6B00B7AED6 /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		829DC06226BB9B4400B7AED6 /* BanchanSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanSection.swift; sourceTree = "<group>"; };
 		829E56EA26B2738D0099C3A0 /* Banchans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchans.swift; sourceTree = "<group>"; };
-		829FFA5926B7C0B9007925DF /* BanchanStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorage.swift; sourceTree = "<group>"; };
-		829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanStorageType.swift; sourceTree = "<group>"; };
+		829FFA5926B7C0B9007925DF /* BanchanRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanRepository.swift; sourceTree = "<group>"; };
+		829FFA5B26B7C0D5007925DF /* BanchanRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanRepositoryType.swift; sourceTree = "<group>"; };
 		829FFA5D26B7CC96007925DF /* MainBanchanListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBanchanListViewController.swift; sourceTree = "<group>"; };
 		829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableType.swift; sourceTree = "<group>"; };
 		829FFA6126B7D4ED007925DF /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		829FFA6326B7D6E5007925DF /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		82A5252D270BBE6300256402 /* BanchanMainpageUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanMainpageUsecase.swift; sourceTree = "<group>"; };
 		82AB387526C4F05A00A917E5 /* BanChanDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanChanDetailViewModel.swift; sourceTree = "<group>"; };
 		82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBanchanViewController.swift; sourceTree = "<group>"; };
-		82AB387A26C64D8B00A917E5 /* APIMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMaker.swift; sourceTree = "<group>"; };
-		82AB387C26C64D9600A917E5 /* APIMakerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMakerType.swift; sourceTree = "<group>"; };
+		82AB387A26C64D8B00A917E5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		82AB387C26C64D9600A917E5 /* EndpointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointManager.swift; sourceTree = "<group>"; };
 		82ACD9EB26B244FD00CEE616 /* BanchanListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanListViewModel.swift; sourceTree = "<group>"; };
 		82ACD9F126B252F300CEE616 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		82ACD9F326B2545F00CEE616 /* Banchan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banchan.swift; sourceTree = "<group>"; };
+		82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanchanDTO.swift; sourceTree = "<group>"; };
 		82AD88CD26DCC3880082F165 /* DecodedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodedData.swift; sourceTree = "<group>"; };
 		82ADD77626CB70F30045A911 /* RxSwift_SidedishesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwift_SidedishesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_SidedishesTests.swift; sourceTree = "<group>"; };
@@ -162,10 +168,10 @@
 		823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */ = {
 			isa = PBXGroup;
 			children = (
-				82C6625D270305BC00631D05 /* TEMP */,
+				82A5252C270BBE4C00256402 /* UseCase */,
 				829DC06126BB8E7700B7AED6 /* Extension */,
 				829FFA5626B7B338007925DF /* Scene */,
-				82ACD9F026B252DF00CEE616 /* Repository */,
+				82ACD9F026B252DF00CEE616 /* Service */,
 				82ACD9EF26B252B300CEE616 /* ViewModel */,
 				82ACD9EA26B2425200CEE616 /* Model */,
 				82ACD9E826B23E4200CEE616 /* App */,
@@ -197,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				829FFA6126B7D4ED007925DF /* TransitionModel.swift */,
-				829FFA5826B7C094007925DF /* BanchanStorage */,
+				829FFA5826B7C094007925DF /* BanchanRepository */,
 				829FFA6326B7D6E5007925DF /* Scene.swift */,
 				829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */,
 				829DC05726B907D300B7AED6 /* SceneCoordinator.swift */,
@@ -208,7 +214,6 @@
 		829FFA5726B7B367007925DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				823C57AC26AE7EC300A2B80E /* MainViewController.swift */,
 				829FFA5D26B7CC96007925DF /* MainBanchanListViewController.swift */,
 				829FFA5F26B7D26B007925DF /* ViewModelBindableType.swift */,
 				82AB387726C4F1A600A917E5 /* DetailBanchanViewController.swift */,
@@ -217,13 +222,22 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		829FFA5826B7C094007925DF /* BanchanStorage */ = {
+		829FFA5826B7C094007925DF /* BanchanRepository */ = {
 			isa = PBXGroup;
 			children = (
-				829FFA5926B7C0B9007925DF /* BanchanStorage.swift */,
-				829FFA5B26B7C0D5007925DF /* BanchanStorageType.swift */,
+				829FFA5926B7C0B9007925DF /* BanchanRepository.swift */,
+				829FFA5B26B7C0D5007925DF /* BanchanRepositoryType.swift */,
 			);
-			path = BanchanStorage;
+			path = BanchanRepository;
+			sourceTree = "<group>";
+		};
+		82A5252C270BBE4C00256402 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				82A5252D270BBE6300256402 /* BanchanMainpageUsecase.swift */,
+				822EB189270C208800280796 /* CommonUsecase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		82ACD9E726B23E2400CEE616 /* Asset */ = {
@@ -258,8 +272,10 @@
 			isa = PBXGroup;
 			children = (
 				826F707726D73E9D00139F8F /* Test */,
-				82ACD9F326B2545F00CEE616 /* Banchan.swift */,
+				82ACD9F326B2545F00CEE616 /* BanchanDTO.swift */,
 				829E56EA26B2738D0099C3A0 /* Banchans.swift */,
+				829CEE9A2705F9F500C8B4AA /* Banchan.swift */,
+				8264CF44270744520092688E /* BanchanManagble.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,17 +290,18 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		82ACD9F026B252DF00CEE616 /* Repository */ = {
+		82ACD9F026B252DF00CEE616 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
 				82ACD9F126B252F300CEE616 /* APIService.swift */,
 				829DC05B26BA692400B7AED6 /* APIServiceType.swift */,
-				82AB387A26C64D8B00A917E5 /* APIMaker.swift */,
-				82AB387C26C64D9600A917E5 /* APIMakerType.swift */,
+				82AB387A26C64D8B00A917E5 /* Endpoint.swift */,
+				82AB387C26C64D9600A917E5 /* EndpointManager.swift */,
 				8283235426D4A8DB00B6EA01 /* APIServiceError.swift */,
-				824F04F026DCA99200300173 /* APIMakerStub.swift */,
+				824F04F026DCA99200300173 /* EndpointStub.swift */,
 			);
-			path = Repository;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		82ADD77726CB70F40045A911 /* RxSwift_SidedishesTests */ = {
@@ -294,14 +311,6 @@
 				82ADD77A26CB70F40045A911 /* Info.plist */,
 			);
 			path = RxSwift_SidedishesTests;
-			sourceTree = "<group>";
-		};
-		82C6625D270305BC00631D05 /* TEMP */ = {
-			isa = PBXGroup;
-			children = (
-				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
-			);
-			path = TEMP;
 			sourceTree = "<group>";
 		};
 		B6106C18620AD5C636509D71 /* Pods */ = {
@@ -506,25 +515,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822EB18A270C208800280796 /* CommonUsecase.swift in Sources */,
 				8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */,
 				829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */,
 				829DC05E26BB83F900B7AED6 /* MainViewBanchanCell.swift in Sources */,
 				829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */,
-				829FFA5C26B7C0D5007925DF /* BanchanStorageType.swift in Sources */,
+				829FFA5C26B7C0D5007925DF /* BanchanRepositoryType.swift in Sources */,
 				829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */,
-				823C57AD26AE7EC300A2B80E /* MainViewController.swift in Sources */,
 				8283235526D4A8DB00B6EA01 /* APIServiceError.swift in Sources */,
 				829E56EB26B2738D0099C3A0 /* Banchans.swift in Sources */,
+				82A5252E270BBE6300256402 /* BanchanMainpageUsecase.swift in Sources */,
 				829DC05A26B9121800B7AED6 /* CommonViewModel.swift in Sources */,
 				829FFA6426B7D6E5007925DF /* Scene.swift in Sources */,
 				82AB387626C4F05A00A917E5 /* BanChanDetailViewModel.swift in Sources */,
 				829DC05826B907D300B7AED6 /* SceneCoordinator.swift in Sources */,
-				82AB387B26C64D8B00A917E5 /* APIMaker.swift in Sources */,
+				82AB387B26C64D8B00A917E5 /* Endpoint.swift in Sources */,
 				829DC05C26BA692400B7AED6 /* APIServiceType.swift in Sources */,
-				82ACD9F426B2545F00CEE616 /* Banchan.swift in Sources */,
-				824F04F126DCA99200300173 /* APIMakerStub.swift in Sources */,
+				82ACD9F426B2545F00CEE616 /* BanchanDTO.swift in Sources */,
+				824F04F126DCA99200300173 /* EndpointStub.swift in Sources */,
 				82AB387826C4F1A600A917E5 /* DetailBanchanViewController.swift in Sources */,
+				8264CF45270744520092688E /* BanchanManagble.swift in Sources */,
 				82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */,
+				829CEE9B2705F9F500C8B4AA /* Banchan.swift in Sources */,
 				82C6625F270305C900631D05 /* ImageCacheManager.swift in Sources */,
 				82ACD9F226B252F300CEE616 /* APIService.swift in Sources */,
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
@@ -533,8 +545,8 @@
 				823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */,
 				829FFA5E26B7CC96007925DF /* MainBanchanListViewController.swift in Sources */,
 				82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */,
-				82AB387D26C64D9600A917E5 /* APIMakerType.swift in Sources */,
-				829FFA5A26B7C0B9007925DF /* BanchanStorage.swift in Sources */,
+				82AB387D26C64D9600A917E5 /* EndpointManager.swift in Sources */,
+				829FFA5A26B7C0B9007925DF /* BanchanRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

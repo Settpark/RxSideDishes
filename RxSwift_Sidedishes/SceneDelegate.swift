@@ -18,10 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        let stroage = BanchanStorage(apiService: APIService(urlSessionManager: URLSession.shared, apiMaker: APIMaker.init()))
+        let repository = BanchanRepository(apiService: APIService(urlSessionManager: URLSession.shared, endPoint: EndPoint.init()))
+        let mainUsecase = BanchanMainpageUsecase(repository: repository)
         let coordinator = SceneCoordinator(window: self.window!)
-        let banchanListViewModel = BanchanListViewModel.init(sceneCoordinator: coordinator, storage: stroage)
-        let listScene = Scene.MainList(banchanListViewModel)
+        let mainBanchanListViewmodel = BanchanListViewModel.init(sceneCoordinator: coordinator, useCase: mainUsecase)
+        let listScene = Scene.MainList(mainBanchanListViewmodel)
         
         coordinator.transition(to: listScene, using: .root, animated: true)
         #elseif DEBUG
