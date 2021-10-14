@@ -7,7 +7,19 @@ target 'RxSwift_Sidedishes' do
 
 pod 'RxSwift'
 pod 'Alamofire'
-
+pod 'RxCocoa'
+pod 'Action'
+pod 'NSObject+Rx'
+pod 'RxDataSources'
+pod 'RxCoreData'
+pod 'SnapKit'
   # Pods for RxSwift_Sidedishes
+
+target 'RxSwift_SidedishesTests' do
+  inherit! :search_paths
+  pod 'RxTest'
+  pod 'RxBlocking'
+  # Pods for testing
+end
 
 end
