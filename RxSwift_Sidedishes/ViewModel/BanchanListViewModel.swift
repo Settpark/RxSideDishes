@@ -10,8 +10,11 @@ import RxSwift
 
 class BanchanListViewModel: CommonViewModel {
     
-    var banchanList: Observable<[BanchanSection]> { //상당히 상황에 고정적인 코드 테스트하기 나쁘다.
-        let mainDish = self.useCase.banchan(currentUsecase: .main)
+    let disposebag = DisposeBag()
+    
+    var banchanList: Observable<[BanchanSection]> {
+        
+        let mainDish = self.useCase.banchan(currentUsecase: .none)
         let soupDish = self.useCase.banchan(currentUsecase: .soup)
         let sideDish = self.useCase.banchan(currentUsecase: .side)
         
@@ -23,5 +26,13 @@ class BanchanListViewModel: CommonViewModel {
             ]
             return dishes
         })
+    }
+    
+    func handlingError() {
+        self.banchanList.subscribe { data in
+            print("aa")
+        } onError: { err in
+            self.delegate?.showAlertController(error: err)
+        }.disposed(by: disposebag)
     }
 }

@@ -148,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */,
-				82ACD9E926B23FA200CEE616 /* View */,
 				82ADD77726CB70F40045A911 /* RxSwift_SidedishesTests */,
 				823C57A626AE7EC300A2B80E /* Products */,
 				B6106C18620AD5C636509D71 /* Pods */,
@@ -168,10 +167,13 @@
 		823C57A726AE7EC300A2B80E /* RxSwift_Sidedishes */ = {
 			isa = PBXGroup;
 			children = (
+				82D78C41270DBC7300D836A8 /* Storage */,
 				82A5252C270BBE4C00256402 /* UseCase */,
 				829DC06126BB8E7700B7AED6 /* Extension */,
+				829FFA5826B7C094007925DF /* BanchanRepository */,
 				829FFA5626B7B338007925DF /* Scene */,
 				82ACD9F026B252DF00CEE616 /* Service */,
+				82ACD9E926B23FA200CEE616 /* View */,
 				82ACD9EF26B252B300CEE616 /* ViewModel */,
 				82ACD9EA26B2425200CEE616 /* Model */,
 				82ACD9E826B23E4200CEE616 /* App */,
@@ -203,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				829FFA6126B7D4ED007925DF /* TransitionModel.swift */,
-				829FFA5826B7C094007925DF /* BanchanRepository */,
 				829FFA6326B7D6E5007925DF /* Scene.swift */,
 				829DC05526B9070900B7AED6 /* SceneCoordinatorType.swift */,
 				829DC05726B907D300B7AED6 /* SceneCoordinator.swift */,
@@ -293,7 +294,6 @@
 		82ACD9F026B252DF00CEE616 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
 				82ACD9F126B252F300CEE616 /* APIService.swift */,
 				829DC05B26BA692400B7AED6 /* APIServiceType.swift */,
 				82AB387A26C64D8B00A917E5 /* Endpoint.swift */,
@@ -311,6 +311,14 @@
 				82ADD77A26CB70F40045A911 /* Info.plist */,
 			);
 			path = RxSwift_SidedishesTests;
+			sourceTree = "<group>";
+		};
+		82D78C41270DBC7300D836A8 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				82C6625E270305C900631D05 /* ImageCacheManager.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		B6106C18620AD5C636509D71 /* Pods */ = {

@@ -10,8 +10,8 @@ import Alamofire
 import RxSwift
 import UIKit
 
-class APIService: APIServiceType {  //너는 왜 클래스니? //create Request //decoding //apimaker 가지고 있고
-    //apimaker의 함수를 통해서 url.초기화
+class APIService: APIServiceType {
+    
     private let urlSessionManager: URLSessionProtocol
     private let endPoint: EndpointManager
     
@@ -24,7 +24,6 @@ class APIService: APIServiceType {  //너는 왜 클래스니? //create Request 
         let request = createRequest(url: url)
         return URLSession.shared.rx.data(request: request)
             .flatMap { [unowned self] data in
-                
                 return self.decodedData(type: type, data: data)
             }
     }

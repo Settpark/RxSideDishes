@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
         
-        let repository = BanchanRepository(apiService: APIService(urlSessionManager: URLSession.shared, endPoint: EndPoint.init()))
+        let apiService = APIService(urlSessionManager: URLSession.shared, endPoint: EndPoint.init())
+        let repository = BanchanRepository(apiService: apiService)
         let mainUsecase = BanchanMainpageUsecase(repository: repository)
         let coordinator = SceneCoordinator(window: self.window!)
         let mainBanchanListViewmodel = BanchanListViewModel.init(sceneCoordinator: coordinator, useCase: mainUsecase)
