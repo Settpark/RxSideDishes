@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol AlertController {
+protocol AlertController: AnyObject {
     func showAlertController(error: Error)
 }
 

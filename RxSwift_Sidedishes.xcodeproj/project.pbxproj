@@ -173,6 +173,7 @@
 				829FFA5826B7C094007925DF /* BanchanRepository */,
 				829FFA5626B7B338007925DF /* Scene */,
 				82ACD9F026B252DF00CEE616 /* Service */,
+				829FFA5726B7B367007925DF /* ViewController */,
 				82ACD9E926B23FA200CEE616 /* View */,
 				82ACD9EF26B252B300CEE616 /* ViewModel */,
 				82ACD9EA26B2425200CEE616 /* Model */,
@@ -262,7 +263,6 @@
 		82ACD9E926B23FA200CEE616 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				829FFA5726B7B367007925DF /* ViewController */,
 				829DC05D26BB83F900B7AED6 /* MainViewBanchanCell.swift */,
 				829DC06226BB9B4400B7AED6 /* BanchanSection.swift */,
 			);

@@ -14,7 +14,7 @@ class BanchanListViewModel: CommonViewModel {
     
     var banchanList: Observable<[BanchanSection]> {
         
-        let mainDish = self.useCase.banchan(currentUsecase: .none)
+        let mainDish = self.useCase.banchan(currentUsecase: .main)
         let soupDish = self.useCase.banchan(currentUsecase: .soup)
         let sideDish = self.useCase.banchan(currentUsecase: .side)
         
@@ -29,8 +29,7 @@ class BanchanListViewModel: CommonViewModel {
     }
     
     func handlingError() {
-        self.banchanList.subscribe { data in
-            print("aa")
+        self.banchanList.subscribe { _ in
         } onError: { err in
             self.delegate?.showAlertController(error: err)
         }.disposed(by: disposebag)

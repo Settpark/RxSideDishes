@@ -28,29 +28,39 @@ class MainViewBanchanCell: UITableViewCell {
     private var badge: [UILabel]
     private var deliveryType: [UILabel]
     
-    var ob_image: Observable<UIImageView> = PublishSubject<UIImageView>()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         self.cellContainView = UIStackView()
         self.cellContainView.axis = .vertical
-        self.cellContainView.distribution = .fillEqually
+        self.cellContainView.distribution = .equalSpacing
         self.cellContainView.alignment = .leading
         self.stackviewForPrice = UIStackView()
         self.stackviewForPrice.axis = .horizontal
-        self.stackviewForPrice.distribution = .fillEqually
-        self.stackviewForPrice.alignment = .leading
+        self.stackviewForPrice.distribution = .equalSpacing
+        self.stackviewForPrice.spacing = 5
+        self.stackviewForPrice.alignment = .center
         self.stackviewForBadge = UIStackView()
         self.stackviewForBadge.axis = .horizontal
         self.stackviewForBadge.contentMode = .left
+        self.stackviewForBadge.distribution = .equalSpacing
+        self.stackviewForBadge.spacing = 5
         self.stackviewForDeliveryType = UIStackView()
         self.stackviewForDeliveryType.axis = .horizontal
         self.stackviewForDeliveryType.contentMode = .left
+        self.stackviewForDeliveryType.distribution = .equalSpacing
+        self.stackviewForDeliveryType.spacing = 5
         
         self.banchanimage = UIImageView()
         self.title = UILabel()
+        self.title.font = .boldSystemFont(ofSize: 15)
+        self.title.sizeToFit()
         self.banchanDescription = UILabel()
+        self.banchanDescription.font = .systemFont(ofSize: 14)
+        self.banchanDescription.numberOfLines = 2
+        self.banchanDescription.sizeToFit()
         self.sPrice = UILabel()
+        self.sPrice.font = .boldSystemFont(ofSize: 14)
         self.nPrice = UILabel()
+        self.nPrice.font = .systemFont(ofSize: 12)
         self.badge = []
         self.deliveryType = []
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -63,12 +73,9 @@ class MainViewBanchanCell: UITableViewCell {
         self.banchanDescription.text = nil
         self.sPrice.text = nil
         self.nPrice.text = nil
-        self.badge.forEach { view in
-            view.text = nil
-        }
-        self.deliveryType.forEach { view in
-            view.text = nil
-        }
+        self.badge.removeAll()
+        self.deliveryType.removeAll()
+        
         stackviewForPrice.subviews.forEach { view in
             view.removeFromSuperview()
         }
@@ -97,6 +104,8 @@ class MainViewBanchanCell: UITableViewCell {
     func setConstraintsCellContents() {
         
         self.addSubview(self.banchanimage)
+        self.banchanimage.layer.masksToBounds = true
+        self.banchanimage.layer.cornerRadius = 10
         self.banchanimage.snp.makeConstraints() { make in
             make.width.height.equalTo(100)
             make.left.equalTo(self.snp.left).offset(5)
@@ -105,17 +114,17 @@ class MainViewBanchanCell: UITableViewCell {
         
         self.addSubview(self.cellContainView)
         self.cellContainView.snp.makeConstraints { make in
+            make.centerY.equalTo(self)
             make.left.equalTo(self.banchanimage.snp.right).offset(5)
-            make.height.equalTo(self)
+            make.height.equalTo(self).multipliedBy(0.85)
         }
         
         self.cellContainView.addArrangedSubview(self.title)
-        self.title.font = .boldSystemFont(ofSize: 15)
-        self.title.sizeToFit()
         
         self.cellContainView.addArrangedSubview(self.banchanDescription)
-        self.banchanDescription.font = .systemFont(ofSize: 15)
-        self.banchanDescription.sizeToFit()
+        self.banchanDescription.snp.makeConstraints { make in
+            make.trailing.equalTo(self)
+        }
         
         self.cellContainView.addArrangedSubview(self.stackviewForPrice)
         self.stackviewForPrice.snp.makeConstraints { make in
@@ -131,8 +140,11 @@ class MainViewBanchanCell: UITableViewCell {
                 make.left.equalTo(cellContainView.snp.left)
             }
             
-            self.badge.forEach { label in
+            self.badge.forEach { [unowned self] label in
                 self.stackviewForBadge.addArrangedSubview(label)
+                label.snp.makeConstraints { make in
+                    make.width.equalTo(self).multipliedBy(0.15)
+                }
             }
         }
         
@@ -140,18 +152,31 @@ class MainViewBanchanCell: UITableViewCell {
         self.stackviewForDeliveryType.snp.makeConstraints { make in
             make.left.equalTo(self.cellContainView.snp.left)
         }
-        self.deliveryType.forEach { label in
+        self.deliveryType.forEach { [unowned self] label in
             self.stackviewForDeliveryType.addArrangedSubview(label)
+            label.snp.makeConstraints { make in
+                make.width.equalTo(self).multipliedBy(0.15)
+            }
         }
     }
     
     func initbadgeAndDeliveryType(badge: [String], deliveryType: [String]) {
         badge.forEach { string in
-            let label = UILabel.init(title: string, size: 14)
+            let label = UILabel.init(title: string, size: 13)
+            label.backgroundColor = UIColor(red: 100/255, green: 168/255, blue: 255/255, alpha: 1)
+            label.textColor = .white
+            label.textAlignment = .center
+            label.layer.masksToBounds = true
+            label.layer.cornerRadius = 3;
             self.badge.append(label)
         }
         deliveryType.forEach { string in
-            let label = UILabel.init(title: string, size: 14)
+            let label = UILabel.init(title: string, size: 13)
+            label.backgroundColor = UIColor(red: 100/255, green: 168/255, blue: 255/255, alpha: 0.7)
+            label.textColor = .white
+            label.textAlignment = .center
+            label.layer.masksToBounds = true
+            label.layer.cornerRadius = 3;
             self.deliveryType.append(label)
         }
     }

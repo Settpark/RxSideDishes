@@ -37,7 +37,7 @@ class APIService: APIServiceType {
         do {
             request = try URLRequest.init(url: url, method: .get)
         } catch {
-            print(APIServiceError.wrongRequest)
+//            print(APIServiceError.wrongRequest)
         }
         return request
     }
@@ -49,8 +49,8 @@ class APIService: APIServiceType {
             do {
                 let local = try decoder.decode(type, from: data)
                 emitter.onNext(local)
-            } catch {
-                emitter.onError(APIServiceError.failedDecoding)
+            } catch (let error) {
+                emitter.onError(error)
             }
             return Disposables.create()
         }

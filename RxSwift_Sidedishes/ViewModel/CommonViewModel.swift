@@ -11,7 +11,7 @@ import RxCocoa
 
 class CommonViewModel: NSObject {
     let sceneCoordinator: SceneCoordinatorType
-    var delegate: AlertController?
+    weak var delegate: AlertController?
     let useCase: CommonUsecase
     
     init(sceneCoordinator: SceneCoordinatorType, useCase: CommonUsecase) {

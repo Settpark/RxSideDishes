@@ -30,19 +30,16 @@ class DetailBanchanViewController: UIViewController, ViewModelBindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.view.addSubview(tempImageView)
-        self.tempImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.tempImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        self.tempImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        self.tempImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.tempImageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        self.tempImageView.image = UIImage(contentsOfFile: "https://public.codesquad.kr/jk/storeapp/data/2d3f99a9a35601f4e98837bc4d39b2c8.jpg")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     func bindViewModel() {
         var backButton = UIBarButtonItem(title: "뒤로", style: .done, target: nil, action: nil)
         backButton.rx.action = viewModel.popAction
-//        navigationItem.backBarButtonItem = backButton
         navigationItem.hidesBackButton = true
         navigationItem.leftBarButtonItem = backButton
     }

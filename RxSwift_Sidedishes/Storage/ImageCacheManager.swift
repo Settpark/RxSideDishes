@@ -36,16 +36,13 @@ class ImageCacheManager {
         let cachedDirectory = diskCacheManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
         let dataPath = cachedDirectory.appendingPathComponent("DiskCache")
         let strPath = dataPath.appendingPathComponent(url.split(separator: "/").last!.description)
-        print(dataPath)
         makeDirectory(url: dataPath)
         if diskCacheManager.fileExists(atPath: strPath.path) {
             do {
-                print("캐시에서 가져옵니다.")
                 let data = try Data(contentsOf: strPath)
                 let image = UIImage(data: data) ?? UIImage()
                 return Observable<UIImage>.just(image)
-            } catch let error {
-                print("unknown image Error: \(error.localizedDescription)")
+            } catch {
                 return Observable<UIImage>.just(UIImage())
             }
         } else {
@@ -58,11 +55,9 @@ class ImageCacheManager {
     func makeDirectory(url: URL) {
         if !diskCacheManager.fileExists(atPath: url.path) {
             do {
-                print("경로를 생성합니다")
-                // 디렉토리 생성
                 try diskCacheManager.createDirectory(atPath: url.path, withIntermediateDirectories: false, attributes: nil)
-            } catch let error {
-                print("Error creating directory: \(error.localizedDescription)")
+            } catch {
+                
             }
         }
     }

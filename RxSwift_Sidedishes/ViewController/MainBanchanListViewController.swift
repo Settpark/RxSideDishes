@@ -30,15 +30,22 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
     }
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
         super.viewDidLoad()
+        self.view.backgroundColor = .white
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func initTableView() {
         let tableViewSize = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.listTableView.frame = tableViewSize
         self.listTableView.register(MainViewBanchanCell.self, forCellReuseIdentifier: MainViewBanchanCell.cellidentifier)
+        self.listTableView.backgroundColor = .white
         self.view.addSubview(self.listTableView)
+        setConstraintlistTableView()
         self.listTableView.rx
             .setDelegate(self)
             .disposed(by: rx.disposeBag)
@@ -58,6 +65,16 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    func setConstraintlistTableView() {
+        self.listTableView.translatesAutoresizingMaskIntoConstraints = false
+        self.listTableView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading)
+            make.width.equalTo(self.view.safeAreaLayoutGuide.snp.width)
+            make.height.equalTo(self.view.safeAreaLayoutGuide.snp.height)
+        }
+    }
 }
 
 extension MainBanchanListViewController: UITableViewDelegate {
@@ -67,11 +84,7 @@ extension MainBanchanListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height / TableViewSizeProperties.tableViewRatio.rawValue
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return TableViewSizeProperties.headerViewSize.rawValue + 10
+        return 120
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -79,11 +92,13 @@ extension MainBanchanListViewController: UITableViewDelegate {
         headerView.backgroundColor = .white
 
         let title = UILabel.init(title: SectionMainViewTitle.allCases[section].rawValue, size: TableViewSizeProperties.headerViewSize.rawValue)
+        title.font = .boldSystemFont(ofSize: 20)
         title.sizeToFit()
         headerView.addSubview(title)
-        title.translatesAutoresizingMaskIntoConstraints = false
-        title.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
-
+        title.snp.makeConstraints { make in
+            make.leading.equalTo(headerView).offset(15)
+            make.centerY.equalTo(headerView)
+        }
         return headerView
     }
 }
