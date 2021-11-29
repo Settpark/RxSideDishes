@@ -43,7 +43,6 @@ class MainBanchanListViewController: UIViewController, ViewModelBindableType, Al
         let tableViewSize = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.listTableView.frame = tableViewSize
         self.listTableView.register(MainViewBanchanCell.self, forCellReuseIdentifier: MainViewBanchanCell.cellidentifier)
-        self.listTableView.backgroundColor = .white
         self.view.addSubview(self.listTableView)
         setConstraintlistTableView()
         self.listTableView.rx

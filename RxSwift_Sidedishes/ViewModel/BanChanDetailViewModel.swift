@@ -15,5 +15,4 @@ class BanChanDetailViewModel: CommonViewModel {
         return self.sceneCoordinator.close(animated: true).asObservable().map { _ in
         }
     }
-    //action
 }
