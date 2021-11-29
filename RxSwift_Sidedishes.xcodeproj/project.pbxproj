@@ -49,6 +49,8 @@
 		82AD88CE26DCC3880082F165 /* DecodedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AD88CD26DCC3880082F165 /* DecodedData.swift */; };
 		82ADD77926CB70F40045A911 /* RxSwift_SidedishesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */; };
 		82C6625F270305C900631D05 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C6625E270305C900631D05 /* ImageCacheManager.swift */; };
+		82D2151C27550A5F0052EAED /* DetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2151B27550A5F0052EAED /* DetailDTO.swift */; };
+		82D2151E27550A9F0052EAED /* DetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2151D27550A9F0052EAED /* DetailData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		82ADD77826CB70F40045A911 /* RxSwift_SidedishesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift_SidedishesTests.swift; sourceTree = "<group>"; };
 		82ADD77A26CB70F40045A911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82C6625E270305C900631D05 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		82D2151B27550A5F0052EAED /* DetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDTO.swift; sourceTree = "<group>"; };
+		82D2151D27550A9F0052EAED /* DetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailData.swift; sourceTree = "<group>"; };
 		90147A67744AE797B38A4A33 /* Pods-RxSwift_Sidedishes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_Sidedishes.release.xcconfig"; path = "Target Support Files/Pods-RxSwift_Sidedishes/Pods-RxSwift_Sidedishes.release.xcconfig"; sourceTree = "<group>"; };
 		A5C901CAECDE920B1FA8B55A /* Pods-RxSwift_Sidedishes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_Sidedishes.debug.xcconfig"; path = "Target Support Files/Pods-RxSwift_Sidedishes/Pods-RxSwift_Sidedishes.debug.xcconfig"; sourceTree = "<group>"; };
 		D0BC92D5D08925B0152BE3BC /* Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests/Pods-RxSwift_Sidedishes-RxSwift_SidedishesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				829E56EA26B2738D0099C3A0 /* Banchans.swift */,
 				829CEE9A2705F9F500C8B4AA /* Banchan.swift */,
 				8264CF44270744520092688E /* BanchanManagble.swift */,
+				82D2151B27550A5F0052EAED /* DetailDTO.swift */,
+				82D2151D27550A9F0052EAED /* DetailData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				8283235826D4BE5D00B6EA01 /* AlertController.swift in Sources */,
 				829FFA6226B7D4ED007925DF /* TransitionModel.swift in Sources */,
 				829DC05E26BB83F900B7AED6 /* MainViewBanchanCell.swift in Sources */,
+				82D2151E27550A9F0052EAED /* DetailData.swift in Sources */,
 				829DC05626B9070900B7AED6 /* SceneCoordinatorType.swift in Sources */,
 				829FFA5C26B7C0D5007925DF /* BanchanRepositoryType.swift in Sources */,
 				829DC06326BB9B4400B7AED6 /* BanchanSection.swift in Sources */,
@@ -550,6 +557,7 @@
 				823C57A926AE7EC300A2B80E /* AppDelegate.swift in Sources */,
 				829DC06026BB8E6B00B7AED6 /* Extension+UILabel.swift in Sources */,
 				829FFA6026B7D26B007925DF /* ViewModelBindableType.swift in Sources */,
+				82D2151C27550A5F0052EAED /* DetailDTO.swift in Sources */,
 				823C57AB26AE7EC300A2B80E /* SceneDelegate.swift in Sources */,
 				829FFA5E26B7CC96007925DF /* MainBanchanListViewController.swift in Sources */,
 				82ACD9EC26B244FD00CEE616 /* BanchanListViewModel.swift in Sources */,

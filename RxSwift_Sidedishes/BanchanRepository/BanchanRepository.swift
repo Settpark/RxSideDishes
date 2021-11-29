@@ -38,6 +38,10 @@ class BanchanRepository: BanchanRepositoryType {
             }.buffer(timeSpan: .never, count: 0, scheduler: MainScheduler.instance)
     }
     
+    func DetailBanchan(path: MainpageUsecase) -> Observable<DetailDTO> {
+        let url = apiService.createRequest(url: path.rawValue)
+        return apiService.requestDataWithRx(url: <#T##URL#>, type: DetailDTO.Type)
+    }
 
     
     @discardableResult
